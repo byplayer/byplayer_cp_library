@@ -1,0 +1,8 @@
+#!/bin/bash
+
+BASE_DIR=$(dirname $0)
+
+AC_DIR="$(cd -- "${BASE_DIR}/../../ac-library" && pwd)" || exit $?
+BCPL_DIR="$(cd -- "${BASE_DIR}/../../byplayer_cp_library" && pwd)" || exit $?
+
+CPLUS_INCLUDE_PATH=${AC_DIR}:${BCPL_DIR} python $BASE_DIR/expander.py $*
