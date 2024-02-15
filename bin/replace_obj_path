@@ -1,0 +1,5 @@
+#!/bin/bash
+
+BASE_DIR=$(dirname "$0")
+
+python "${BASE_DIR}/replace_obj_path.py" $*

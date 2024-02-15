@@ -53,6 +53,11 @@ PROGRAM := $(PROGRAM_DIR)/$(PROGRAM_NAME)
 
 SOURCE_NAMES = $(notdir $(SOURCES))
 
+# dependencies
+DEPEND_DIR := $(OUT_DIR)/depend
+VPATH += $(DEPEND_DIR)
+DEPENDS := $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.d))
+
 # headers
 HEADER_DIR := include
 HEADERS := $(wildcard $(HEADER_DIR)/*.h)
@@ -75,7 +80,12 @@ $(PROGRAM): $(OBJS)
 
 $(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) -c $^ -o $@
+	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) -c $< -o $@
+
+$(DEPEND_DIR)/%.d: $(SOURCE_DIR)/%.cpp
+	@mkdir -p $(DEPEND_DIR)
+	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) -MM -MF $@ $<
+	replace_obj_path $@ $(OBJ_DIR)
 
 .PHONY : clean
 clean:
@@ -90,3 +100,10 @@ test: $(PROGRAM)
 	$(PROGRAM)
 
 .DEFAULT_GOAL := test
+
+IS_DRYRUN := $(findstring n,$(filter-out --%,${MAKEFLAGS}))
+ONLY_CLEAN := $(findstring _clean_,_${MAKECMDGOALS}_)
+
+ifeq ($(or ${IS_DRYRUN},${ONLY_CLEAN}),)
+	include $(DEPENDS)
+endif
