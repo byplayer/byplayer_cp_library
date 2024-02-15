@@ -32,5 +32,5 @@ TEST(Dijkstra, unreachable) {
   Dijkstra::Graph graph(3);
   graph[0].emplace_back(Dijkstra::Node(1, 100));
   auto distances = Dijkstra::calculate(graph, 0);
-  ASSERT_EQ(Dijkstra::INF, distances[2]);
+  ASSERT_EQ(Dijkstra::INF(), distances[2]);
 }

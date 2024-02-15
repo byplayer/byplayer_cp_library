@@ -19,7 +19,7 @@ template <typename C, typename D> struct dijkstra {
   using DistancePair = std::pair<DistanceType, std::size_t>;
   using DistancePairVector = std::vector<DistancePair>;
   using DistanceVector = std::vector<DistanceType>;
-  static const DistanceType INF = std::numeric_limits<DistanceType>::max();
+  static DistanceType INF() { return std::numeric_limits<DistanceType>::max(); }
 
   struct Node {
     std::size_t to;
@@ -38,7 +38,7 @@ template <typename C, typename D> struct dijkstra {
 
 public:
   static DistanceVector calculate(const Graph &graph, const std::size_t start) {
-    DistanceVector distances(graph.size(), INF);
+    DistanceVector distances(graph.size(), INF());
 
     distances[start] = 0;
     std::priority_queue<DistancePair, DistancePairVector,
