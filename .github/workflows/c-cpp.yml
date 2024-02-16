@@ -24,4 +24,4 @@ jobs:
       - name: "build and run unit tests"
         run: |
           cd test/unittest
-          make CXX=${{matrix.cxx}} CXX_VER=${{matrix.cxx_ver}} clean test
+          make CXX=${{matrix.cxx}} CXX_VER=${{matrix.cxx_ver}} test
