@@ -51,6 +51,8 @@ endif
 LD = $(CXX)
 LDFLAGS = -L./gtest_$(CXX)/lib -lgtest -lgmock -lgtest_main
 
+REPLACE_OBJ_PATH=../../bin/replace_obj_path
+
 # out
 OUT_BASE = out_$(CXX)
 RELEASE_OUT_DIR = $(OUT_BASE)/release
@@ -87,7 +89,6 @@ INCLUDES += -I../ac-library
 INCLUDES += -I../../include
 INCLUDES += -I./gtest_$(CXX)/include
 
-
 # objs
 OBJ_DIR = $(OUT_DIR)/obj
 OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCE_NAMES:.cpp=.o))
@@ -105,7 +106,7 @@ $(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 $(DEPEND_DIR)/%.d: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(DEPEND_DIR)
 	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) -MM -MF $@ $<
-	replace_obj_path $@ $(OBJ_DIR)
+	$(REPLACE_OBJ_PATH) $@ $(OBJ_DIR)
 
 .PHONY : clean
 clean:

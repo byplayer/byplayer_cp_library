@@ -1,0 +1,6 @@
+#!/bin/bash
+
+poshd test/unittest
+./build_gtest.sh
+./test_all.sh
+popd
