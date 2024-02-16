@@ -84,7 +84,6 @@ DEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.d))
 HEADER_DIR = include
 HEADERS = $(wildcard $(HEADER_DIR)/*.h)
 
-INCLUDES += -I/opt/homebrew/opt/llvm/include
 INCLUDES += -I../ac-library
 INCLUDES += -I../../include
 INCLUDES += -I./gtest_$(CXX)/include
