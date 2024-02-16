@@ -9,6 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cxx: ["g++", "clang++"]
+        cxx_ver: ["c++17", "c++20", "c++2b"]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -20,30 +24,4 @@ jobs:
       - name: "test g++ C++17"
         run: |
           cd test/unittest
-          make CXX=clang++ CXX_VER=c++17 clean
-          make CXX=clang++ CXX_VER=c++17 test
-      - name: "test g++ C++20"
-        run: |
-          cd test/unittest
-          make CXX=clang++ CXX_VER=c++2a clean
-          make CXX=clang++ CXX_VER=c++2a test
-      - name: "test g++ C++23"
-        run: |
-          cd test/unittest
-          make CXX=clang++ CXX_VER=c++2b clean
-          make CXX=clang++ CXX_VER=c++2b test
-      - name: test clang++ C++23
-        run: |
-          cd test/unittest
-          make CXX=clang++ CXX_VER=c++2b clean
-          make CXX=clang++ CXX_VER=c++2b test
-      - name: test clang++ C++20
-        run: |
-          cd test/unittest
-          make CXX=clang++ CXX_VER=c++20 clean
-          make CXX=clang++ CXX_VER=c++20 test
-      - name: test clang++ C++17
-        run: |
-          cd test/unittest
-          make CXX=clang++ CXX_VER=c++17 clean
-          make CXX=clang++ CXX_VER=c++17 test
+          make CXX=${{cxx}} CXX_VER=${{cxx_ver}} clean test
