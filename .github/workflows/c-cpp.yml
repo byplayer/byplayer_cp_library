@@ -21,7 +21,7 @@ jobs:
         run: |
           cd test/unittest
           ./build_gtest.sh
-      - name: "test g++ C++17"
+      - name: "build and run unit tests"
         run: |
           cd test/unittest
           make CXX=${{matrix.cxx}} CXX_VER=${{matrix.cxx_ver}} clean test
