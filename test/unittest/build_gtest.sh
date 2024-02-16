@@ -7,7 +7,7 @@ if [ ! -d gtest_clang++ ]; then
     pushd googletest
     mkdir build_clang++
     cd build_clang++
-    cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_INSTALL_PREFIX=../../gtest_clang++ -DCMAKE_CXX_STANDARD=23 ..
+    cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_INSTALL_PREFIX=../../gtest_clang++ -DCMAKE_CXX_STANDARD=20 ..
     make
     make install
     cd ..
@@ -22,7 +22,7 @@ if [ ! -d gtest_g++ ]; then
     pushd googletest
     mkdir build_g++
     cd build_g++
-    cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PREFIX=../../gtest_g++ -DCMAKE_CXX_STANDARD=23 ..
+    cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PREFIX=../../gtest_g++ -DCMAKE_CXX_STANDARD=20 ..
     make
     make install
     cd ..
