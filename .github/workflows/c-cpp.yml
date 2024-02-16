@@ -1,0 +1,39 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: build gtest
+      run: |
+        cd test/unittest
+        ./build_gtest.sh
+    - name: test clang++ C++23
+      run: |
+        cd test/unittest
+        make CXX=clang++ CXX_VER=c++23 clean
+        make CXX=clang++ CXX_VER=c++23 test
+    - name: test clang++ C++20
+      run: |
+        cd test/unittest
+        make CXX=clang++ CXX_VER=c++20 clean
+        make CXX=clang++ CXX_VER=c++20 test
+    - name: test clang++ C++17
+      run: |
+        cd test/unittest
+        make CXX=clang++ CXX_VER=c++17 clean
+        make CXX=clang++ CXX_VER=c++17 test
+    - name: test g++ C++23
+      run: |
+        cd test/unittest
+        make CXX=clang++ CXX_VER=c++23 clean
+        make CXX=clang++ CXX_VER=c++23 test
