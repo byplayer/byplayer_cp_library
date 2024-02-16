@@ -95,9 +95,9 @@ OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCE_NAMES:.cpp=.o))
 
 .PHONY: all
 all: $(PROGRAM)
-$(PROGRAM): $(OBJS)
+$(PROGRAM): $(OBJS) $(DEPENDS)
 	@mkdir -p $(PROGRAM_DIR)
-	$(LD) $(LDFLAGS) $(LIBS) $^ -o $(PROGRAM)
+	$(LD) $(LDFLAGS) $(LIBS) $(OBJS) -o $(PROGRAM)
 
 $(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
