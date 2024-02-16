@@ -5,16 +5,21 @@
 #  /out
 #    /release
 #      /bin
+#      /depend
 #      /obj
 #    /debug
 #      /bin
+#      /depend
 #      /obj
 
 PROGRAM_NAME := $(shell basename `readlink -f .`)
 
 # compiler
-CXX := clang++
-CXXFLAGS := -std=c++2b \
+CXX ?= clang++
+CXX_VER ?= c++2b
+
+ifeq ($(CXX),clang++)
+CXXFLAGS = -std=$(CXX_VER) \
 			-Weverything -Wall -Wextra -Wpointer-arith -Wcast-qual \
 			-Wno-missing-braces -Wempty-body \
 			-Wno-error=deprecated-declarations \
@@ -26,57 +31,72 @@ CXXFLAGS := -std=c++2b \
 			-march=native \
 			-fconstexpr-depth=2147483647 \
 			-fconstexpr-steps=214748364
-LIBS = -L/opt/homebrew/opt/llvm/lib
-LIBS += -L./gtest/lib -lgtest -lgmock -lgtest_main
+endif
 
-TLE := 4
+ifeq ($(CXX), g++)
+CXXFLAGS = -std=$(CXX_VER) \
+			-Wall -Wextra \
+			-mtune=native -march=native \
+			-Wno-missing-braces -Wempty-body \
+			-Wno-error=deprecated-declarations \
+			-Wno-c++98-compat \
+			-Wno-c++98-compat-pedantic \
+			-Wno-poison-system-directories \
+			-pedantic-errors -pedantic \
+			-fconstexpr-depth=2147483647 \
+			-fconstexpr-loop-limit=2147483647 \
+			-fconstexpr-ops-limit=2147483647
+endif
+
+LD = $(CXX)
+LDFLAGS = -L./gtest_$(CXX)/lib -lgtest -lgmock -lgtest_main
 
 # out
-OUT_BASE := out
-RELEASE_OUT_DIR := $(OUT_BASE)/release
-DEBUG_OUT_DIR := $(OUT_BASE)/debug
+OUT_BASE = out_$(CXX)
+RELEASE_OUT_DIR = $(OUT_BASE)/release
+DEBUG_OUT_DIR = $(OUT_BASE)/debug
 
 ifeq ($(DEBUG),1)
-OUT_DIR := $(DEBUG_OUT_DIR)
+OUT_DIR = $(DEBUG_OUT_DIR)
 CXXFLAGS += -g -D _DEBUG=1
 else
-OUT_DIR := $(RELEASE_OUT_DIR)
+OUT_DIR = $(RELEASE_OUT_DIR)
 CXXFLAGS += -O2 -D NDEBUG
 endif
 
 SOURCE_DIR := src
-SOURCES := $(wildcard $(SOURCE_DIR)/*.cpp)
+SOURCES = $(wildcard $(SOURCE_DIR)/*.cpp)
 
 # program
-PROGRAM_DIR := $(OUT_DIR)/bin
-PROGRAM := $(PROGRAM_DIR)/$(PROGRAM_NAME)
+PROGRAM_DIR = $(OUT_DIR)/bin
+PROGRAM = $(PROGRAM_DIR)/$(PROGRAM_NAME)
 
 SOURCE_NAMES = $(notdir $(SOURCES))
 
 # dependencies
-DEPEND_DIR := $(OUT_DIR)/depend
+DEPEND_DIR = $(OUT_DIR)/depend
 VPATH += $(DEPEND_DIR)
-DEPENDS := $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.d))
+DEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.d))
 
 # headers
-HEADER_DIR := include
-HEADERS := $(wildcard $(HEADER_DIR)/*.h)
+HEADER_DIR = include
+HEADERS = $(wildcard $(HEADER_DIR)/*.h)
 
 INCLUDES += -I/opt/homebrew/opt/llvm/include
 INCLUDES += -I../ac-library
 INCLUDES += -I../../include
-INCLUDES += -I./gtest/include
+INCLUDES += -I./gtest_$(CXX)/include
 
 
 # objs
-OBJ_DIR := $(OUT_DIR)/obj
-OBJS := $(addprefix $(OBJ_DIR)/,$(SOURCE_NAMES:.cpp=.o))
+OBJ_DIR = $(OUT_DIR)/obj
+OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCE_NAMES:.cpp=.o))
 
 .PHONY: all
 all: $(PROGRAM)
 $(PROGRAM): $(OBJS)
 	@mkdir -p $(PROGRAM_DIR)
-	$(CXX) $(CXXFLAGS) $(LIBS) $^ -o $(PROGRAM)
+	$(LD) $(LDFLAGS) $(LIBS) $^ -o $(PROGRAM)
 
 $(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
@@ -99,10 +119,10 @@ run: $(PROGRAM)
 test: $(PROGRAM)
 	$(PROGRAM)
 
-.DEFAULT_GOAL := test
+.DEFAULT_GOAL = test
 
-IS_DRYRUN := $(findstring n,$(filter-out --%,${MAKEFLAGS}))
-ONLY_CLEAN := $(findstring _clean_,_${MAKECMDGOALS}_)
+IS_DRYRUN = $(findstring n,$(filter-out --%,${MAKEFLAGS}))
+ONLY_CLEAN = $(findstring _clean_,_${MAKECMDGOALS}_)
 
 ifeq ($(or ${IS_DRYRUN},${ONLY_CLEAN}),)
 	include $(DEPENDS)

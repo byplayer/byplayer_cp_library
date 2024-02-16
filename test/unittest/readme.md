@@ -2,24 +2,31 @@
 
 ## build gtest libraries
 
-Please run the follow commands.
+Please run the following commands.
 
 ```bash
-cd $PROJECt_ROOT
-git submodule update --init
-cd test/unittest/googletest
-mkdir build
-cd build
-cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_INSTALL_PREFIX=../../gtest ..
-make
-make install
+./buid_gtest.sh
 ```
 
-## make and run test
+## make and run the test
 
-Please run the follow commands.
+Please run the following commands.
 
 ```bash
 cd test/unittest
 make test
+```
+
+## make and run test g++
+
+```bash
+cd test/unittest
+make CXX=g++ test
+```
+
+## make and run test g++ with c++17
+
+```bash
+cd test/unittest
+make CXX=g++ CXX_VER='c++17' test
 ```

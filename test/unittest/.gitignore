@@ -1,2 +1,3 @@
-/gtest
-/out
+/gtest_g++
+/gtest_clang++
+/out_*
