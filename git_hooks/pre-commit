@@ -1,6 +1,8 @@
 #!/bin/bash
 
-poshd test/unittest
+set -ue
+
+pushd test/unittest
 ./build_gtest.sh
 ./test_all.sh
 popd
