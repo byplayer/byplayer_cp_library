@@ -24,4 +24,4 @@ jobs:
       - name: "test g++ C++17"
         run: |
           cd test/unittest
-          make CXX=${{cxx}} CXX_VER=${{cxx_ver}} clean test
+          make CXX=${{matrix.cxx}} CXX_VER=${{matrix.cxx_ver}} clean test
