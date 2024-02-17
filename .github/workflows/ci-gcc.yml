@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: byplayer/gcc-cmake:13
+    container: byplayer/cxx-build:3
     strategy:
       matrix:
         cxx: ["g++"]
