@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: gcc tests
 
 on:
   push:
@@ -9,9 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: gcc:13
     strategy:
       matrix:
-        cxx: ["g++", "clang++"]
+        cxx: ["g++"]
         cxx_ver: ["c++17", "c++20", "c++2b"]
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +21,7 @@ jobs:
       - name: build gtest
         run: |
           cd test/unittest
-          ./build_gtest.sh
+          ./build_gtest.sh g++
       - name: "build and run unit tests"
         run: |
           cd test/unittest
