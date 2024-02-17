@@ -99,11 +99,11 @@ OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCE_NAMES:.cpp=.o))
 all: $(PROGRAM)
 $(PROGRAM): $(OBJS) $(DEPENDS)
 	@mkdir -p $(PROGRAM_DIR)
-	$(LD) $(LDFLAGS) $(LIBS) $(OBJS) -o $(PROGRAM)
+	$(LD) $(OBJS) -o $(PROGRAM) $(LDFLAGS) $(LIBS)
 
 $(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) $< -c -o $@
 
 $(DEPEND_DIR)/%.d: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(DEPEND_DIR)
