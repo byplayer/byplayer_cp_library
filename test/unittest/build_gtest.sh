@@ -2,32 +2,39 @@
 
 set -eu
 
-echo build gtest_clang++
-if [ ! -d gtest_clang++ ]; then
-    pushd googletest
-    mkdir build_clang++
-    cd build_clang++
-    cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_INSTALL_PREFIX=../../gtest_clang++ -DCMAKE_CXX_STANDARD=20 ..
-    make
-    make install
-    cd ..
-    rm -r build_clang++
-    popd
-else
-    echo gtest_clang++ is already built.
+function build_gtest() {
+    CC=$1
+    CXX=$2
+    DEST_DIR=gtest_${CXX}
+    BUILD_DIR=build_${CXX}
+
+    echo "build ${DEST_DIR}"
+    if [ ! -d ${DEST_DIR} ]; then
+        pushd googletest
+        if [ -d ${BUILD_DIR} ]; then
+            rm -r ${BUILD_DIR}
+        fi
+        mkdir ${BUILD_DIR}
+        cd ${BUILD_DIR}
+        cmake -DCMAKE_C_COMPILER=${CC} -DCMAKE_CXX_COMPILER=${CXX} -DCMAKE_INSTALL_PREFIX=../../${DEST_DIR} ..
+        make
+        make install
+        cd ..
+        rm -r ${BUILD_DIR}
+        popd
+    else
+        echo ${DEST_DIR} is already built.
+    fi
+}
+
+set +u
+CXX_ARG="$1"
+set -u
+
+if [ -z "${CXX_ARG}" ] || [ "${CXX_ARG}" = "clang++" ]; then
+    build_gtest 'clang' 'clang++'
 fi
 
-echo build gtest_g++
-if [ ! -d gtest_g++ ]; then
-    pushd googletest
-    mkdir build_g++
-    cd build_g++
-    cmake -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_INSTALL_PREFIX=../../gtest_g++ -DCMAKE_CXX_STANDARD=20 ..
-    make
-    make install
-    cd ..
-    rm -r build_g++
-    popd
-else
-    echo gtest_g++ is already built.
+if [ -z "${CXX_ARG}" ] || [ "${CXX_ARG}" = "g++" ]; then
+    build_gtest 'gcc' 'g++'
 fi
