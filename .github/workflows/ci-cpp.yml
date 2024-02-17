@@ -21,8 +21,6 @@ jobs:
       - name: build gtest
         run: |
           cd test/unittest
-          pwd
-          ls -la
           ./build_gtest.sh ${{matrix.cxx}}
       - name: "build and run unit tests"
         run: |
