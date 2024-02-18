@@ -114,6 +114,7 @@ $(DEPEND_DIR)/%.dep: $(DEPEND_DIR)/%.d
 	$(REPLACE_OBJ_PATH) $< $@ $(OBJ_DIR)
 
 gtest_$(CXX):
+	git submodule update --init
 	./build_gtest.sh $(CXX)
 
 .PHONY : clean
