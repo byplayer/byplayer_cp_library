@@ -2,12 +2,12 @@ name: cpp tests
 
 on:
   push:
-    branches: ["main"]
+    branches: ["**"]
   pull_request:
-    branches: ["main"]
+    types: [opened, reopened, closed]
 
 jobs:
-  build:
+  cpp-ci:
     runs-on: ubuntu-latest
     container: byplayer/cxx-build:3
     strategy:
