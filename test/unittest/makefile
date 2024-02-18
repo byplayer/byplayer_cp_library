@@ -113,8 +113,10 @@ $(DEPEND_DIR)/%.d: $(SOURCE_DIR)/%.cpp
 $(DEPEND_DIR)/%.dep: $(DEPEND_DIR)/%.d
 	$(REPLACE_OBJ_PATH) $< $@ $(OBJ_DIR)
 
-gtest_$(CXX):
+googletest/CMakeLists.txt:
 	git submodule update --init
+
+gtest_$(CXX): googletest/CMakeLists.txt
 	./build_gtest.sh $(CXX)
 
 .PHONY : clean
