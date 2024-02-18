@@ -128,7 +128,7 @@ run: $(PROGRAM)
 test: $(PROGRAM)
 	$(PROGRAM)
 
-.DEFAULT_GOAL = test
+.DEFAULT_GOAL = all
 
 IS_DRYRUN = $(findstring n,$(filter-out --%,${MAKEFLAGS}))
 ONLY_CLEAN = $(findstring _clean_,_${MAKECMDGOALS}_)
