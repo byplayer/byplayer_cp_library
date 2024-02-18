@@ -6,9 +6,7 @@ function make_test() {
     CXX=$1
     CXX_VER=$2
     echo test ${CXX} with ${CXX_VER}
-    make CXX=${CXX} CXX_VER=${CXX_VER} clean
     make CXX=${CXX} CXX_VER=${CXX_VER} test
-    make CXX=${CXX} CXX_VER=${CXX_VER} clean
 }
 
 make_test clang++ c++2b
