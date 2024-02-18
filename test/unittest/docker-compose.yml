@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  build:
+    image: "byplayer/cxx-build:test"
+    container_name: "builder"
+    hostname: "builder"
+    volumes:
+      - "../../:/bcpl"
+    command: /bin/bash -c "cd /bcpl/test/unittest && ./build_gtest.sh clang++ && make test"

@@ -78,13 +78,15 @@ SOURCE_NAMES = $(notdir $(SOURCES))
 # dependencies
 DEPEND_DIR = $(OUT_DIR)/depend
 VPATH += $(DEPEND_DIR)
-DEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.d))
+PREDEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.d))
+DEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.dep))
+
+$(DEPENDS): $(PREDEPENDS)
 
 # headers
 HEADER_DIR = include
 HEADERS = $(wildcard $(HEADER_DIR)/*.h)
 
-INCLUDES += -I/opt/homebrew/opt/llvm/include
 INCLUDES += -I../ac-library
 INCLUDES += -I../../include
 INCLUDES += -I./gtest_$(CXX)/include
@@ -95,18 +97,20 @@ OBJS = $(addprefix $(OBJ_DIR)/,$(SOURCE_NAMES:.cpp=.o))
 
 .PHONY: all
 all: $(PROGRAM)
-$(PROGRAM): $(OBJS)
+$(PROGRAM): $(OBJS) $(DEPENDS)
 	@mkdir -p $(PROGRAM_DIR)
-	$(LD) $(LDFLAGS) $(LIBS) $^ -o $(PROGRAM)
+	$(LD) $(OBJS) -o $(PROGRAM) $(LDFLAGS) $(LIBS)
 
 $(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) $< -c -o $@
 
 $(DEPEND_DIR)/%.d: $(SOURCE_DIR)/%.cpp
 	@mkdir -p $(DEPEND_DIR)
 	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) -MM -MF $@ $<
-	$(REPLACE_OBJ_PATH) $@ $(OBJ_DIR)
+
+$(DEPEND_DIR)/%.dep: $(DEPEND_DIR)/%.d
+	$(REPLACE_OBJ_PATH) $< $@ $(OBJ_DIR)
 
 .PHONY : clean
 clean:

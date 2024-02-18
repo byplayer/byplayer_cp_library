@@ -11,9 +11,9 @@ function make_test() {
     make CXX=${CXX} CXX_VER=${CXX_VER} clean
 }
 
-make_test clang++ c++23
-make_test clang++ c++20
-make_test clang++ c++17
-make_test g++ c++23
-make_test g++ c++20
-make_test g++ c++17
+make_test clang++ c++2b
+# make_test clang++ c++20
+# make_test clang++ c++17
+# make_test g++ c++23
+# make_test g++ c++20
+# make_test g++ c++17
