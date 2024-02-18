@@ -81,6 +81,7 @@ VPATH += $(DEPEND_DIR)
 PREDEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.d))
 DEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.dep))
 
+$(PREDEPENDS): gtest_$(CXX)
 $(DEPENDS): $(PREDEPENDS)
 
 # headers
@@ -101,7 +102,7 @@ $(PROGRAM): $(OBJS) $(DEPENDS)
 	@mkdir -p $(PROGRAM_DIR)
 	$(LD) $(OBJS) -o $(PROGRAM) $(LDFLAGS) $(LIBS)
 
-$(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp
+$(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp gtest_$(CXX)
 	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) $< -c -o $@
 
@@ -111,6 +112,9 @@ $(DEPEND_DIR)/%.d: $(SOURCE_DIR)/%.cpp
 
 $(DEPEND_DIR)/%.dep: $(DEPEND_DIR)/%.d
 	$(REPLACE_OBJ_PATH) $< $@ $(OBJ_DIR)
+
+gtest_$(CXX):
+	./build_gtest.sh $(CXX)
 
 .PHONY : clean
 clean:
