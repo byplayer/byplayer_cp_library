@@ -1,3 +1,5 @@
+[![cpp tests](https://github.com/byplayer/byplayer_cp_library/actions/workflows/ci-cpp.yml/badge.svg?branch=main)](https://github.com/byplayer/byplayer_cp_library/actions/workflows/ci-cpp.yml)
+
 # What is this library?
 
 This library aims for competitive programming.
