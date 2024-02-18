@@ -17,10 +17,6 @@ jobs:
           submodules: recursive
       - name: check version
         run: ${{matrix.cxx}} --version
-      - name: build gtest
-        run: |
-          cd test/unittest
-          ./build_gtest.sh ${{matrix.cxx}}
       - name: "build and run unit tests"
         run: |
           cd test/unittest
