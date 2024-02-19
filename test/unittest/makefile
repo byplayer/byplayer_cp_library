@@ -54,9 +54,12 @@ LDFLAGS = -L./gtest_$(CXX)/lib -lgtest -lgmock -lgtest_main
 REPLACE_OBJ_PATH=../../bin/replace_obj_path
 
 # out
-OUT_BASE = out_$(CXX)
+OUT_BASE = out/$(CXX)/$(CXX_VER)
 RELEASE_OUT_DIR = $(OUT_BASE)/release
 DEBUG_OUT_DIR = $(OUT_BASE)/debug
+
+$(OUT_BASE):
+	@mkdir -p $(OUT_BASE)
 
 ifeq ($(DEBUG),1)
 OUT_DIR = $(DEBUG_OUT_DIR)
@@ -65,6 +68,9 @@ else
 OUT_DIR = $(RELEASE_OUT_DIR)
 CXXFLAGS += -O2 -D NDEBUG
 endif
+
+$(OUT_DIR): $(OUT_BASE)
+	@mkdir -p $(OUT_DIR)
 
 SOURCE_DIR := src
 SOURCES = $(wildcard $(SOURCE_DIR)/*.cpp)
@@ -80,6 +86,9 @@ DEPEND_DIR = $(OUT_DIR)/depend
 VPATH += $(DEPEND_DIR)
 PREDEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.d))
 DEPENDS = $(addprefix $(DEPEND_DIR)/,$(SOURCE_NAMES:.cpp=.dep))
+
+$(DEPEND_DIR): $(OUT_DIR)
+	@mkdir -p $(DEPEND_DIR)
 
 $(PREDEPENDS): gtest_$(CXX)
 $(DEPENDS): $(PREDEPENDS)
@@ -106,11 +115,10 @@ $(OBJ_DIR)/%.o: $(SOURCE_DIR)/%.cpp gtest_$(CXX)
 	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) $< -c -o $@
 
-$(DEPEND_DIR)/%.d: $(SOURCE_DIR)/%.cpp
-	@mkdir -p $(DEPEND_DIR)
+$(DEPEND_DIR)/%.d: $(SOURCE_DIR)/%.cpp $(DEPEND_DIR)
 	$(CXX) $(CXXFLAGS) -I$(HEADER_DIR) $(INCLUDES) -MM -MF $@ $<
 
-$(DEPEND_DIR)/%.dep: $(DEPEND_DIR)/%.d
+$(DEPEND_DIR)/%.dep: $(DEPEND_DIR)/%.d $(DEPEND_DIR)
 	$(REPLACE_OBJ_PATH) $< $@ $(OBJ_DIR)
 
 googletest/CMakeLists.txt:
@@ -121,7 +129,7 @@ gtest_$(CXX): googletest/CMakeLists.txt
 
 .PHONY : clean
 clean:
-	$(RM) -r $(OUT_BASE)
+	$(RM) -r out
 
 .PHONY : run
 run: $(PROGRAM)
