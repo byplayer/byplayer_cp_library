@@ -1,8 +1,11 @@
-.PHONY: clean doc
+.PHONY: clean doc test
 clean:
 	$(RM) -r docs
 
 doc:
 	doxygen Doxyfile
 
-.DEFAULT_GOAL = doc
+test:
+	cd test/unittest && make test
+
+.DEFAULT_GOAL = test
