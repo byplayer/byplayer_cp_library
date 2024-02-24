@@ -5,9 +5,9 @@
       "label": "make debug test",
       "type": "shell",
       "command": "make",
-      "args": ["DEBUG=1", "test"],
+      "args": ["CXX=clang++", "DEBUG=1", "test"],
       "options": {
-        "cwd": "${fileDirname}/.."
+        "cwd": "${workspaceFolder}/test/unittest"
       },
       "problemMatcher": ["$gcc"]
     },
@@ -15,9 +15,9 @@
       "label": "make test",
       "type": "shell",
       "command": "make",
-      "args": ["test"],
+      "args": ["CXX=clang++", "test"],
       "options": {
-        "cwd": "${fileDirname}/.."
+        "cwd": "${workspaceFolder}/test/unittest"
       },
       "problemMatcher": ["$gcc"]
     },
@@ -27,7 +27,17 @@
       "command": "make",
       "args": ["clean"],
       "options": {
-        "cwd": "${fileDirname}/.."
+        "cwd": "${workspaceFolder}/test/unittest"
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "make doc",
+      "type": "shell",
+      "command": "make",
+      "args": ["doc"],
+      "options": {
+        "cwd": "${workspaceFolder}"
       },
       "problemMatcher": ["$gcc"]
     }

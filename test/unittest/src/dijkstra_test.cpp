@@ -20,12 +20,14 @@ using Dijkstra = bcpl::dijkstra<int, ll>;
 } // namespace
 
 TEST(Dijkstra, cost) {
-  Dijkstra::Graph graph(3);
+  Dijkstra::Graph graph(4);
   graph[0].emplace_back(Dijkstra::Node(1, 100));
   graph[0].emplace_back(Dijkstra::Node(2, 10));
+  graph[1].emplace_back(Dijkstra::Node(3, 10));
+  graph[2].emplace_back(Dijkstra::Node(3, 10));
 
   auto distances = Dijkstra::calculate(graph, 0);
-  ASSERT_EQ(10, distances[2]);
+  ASSERT_EQ(20, distances[3]);
 }
 
 TEST(Dijkstra, unreachable) {
