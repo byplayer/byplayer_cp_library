@@ -13,21 +13,128 @@
 
 namespace bcpl {
 
+/**
+ * @brief Library for finding shortest path using Dijkstra
+ * method(ダイクストラ法で最短経路を求めるライブラリ)
+ *
+ * @tparam C cost value type @n
+ *         expect: int, unsigned int, long long, unsigned long long @n
+ *         コストの値用のタイプ @n
+ *         期待値: int, unsigned int, long long, unsigned long long
+ * )
+ * @tparam D destination position type @n
+ *           expect: int, unsigned int, long long, unsigned long long @n
+ *           位置情報保存用のタイプ @n
+ *           期待値: int, unsigned int, long long, unsigned long long
+ *
+ * This library finds shortest path using Dijkstra method.
+ *
+ * これは、ダイクストラ法で最短経路を求めるライブラリです。
+ *
+ * There are paths as follow.
+ *
+ * 以下のような経路があるとします。
+ *
+ * <PRE>
+ * [0] -(100)- [2] -(10)- 4
+ *   └ -( 10)- [3] -(10)┘
+ * </PRE>
+ *
+ * There are two paths from 1 to 4. In this case you need prepare
+ * Graph object as follow and call calculate method. Then, you
+ * receive destination and cost vector. You can get destination
+ * cost value when you access destination value of return vector.
+ *
+ * 1から4まで到達するのに2つの経路があります。この時、以下のようなGraphオブジェクト
+ * を準備し、 calculate 関数を呼び出します。関数の戻り値の目的地の値を取得する
+ * 事で、目的地までのコストを取得できます。
+ *
+ * @code{.cpp}
+ * #include "bcpl/types"
+ * using Dijkstra = bcpl::dijkstra<int, bcpl::ll>;
+ *
+ * graph[0].emplace_back(Dijkstra::Node(1, 100));
+ * graph[0].emplace_back(Dijkstra::Node(2, 10));
+ * graph[1].emplace_back(Dijkstra::Node(3, 10));
+ * graph[2].emplace_back(Dijkstra::Node(3, 10));
+ *
+ * ASSERT(graph[3] == 20);
+ * @endcode
+ *
+ * If the destination is unreachable, you will get
+ * bcpl::dijkstra<C, D>::INF() value as result.
+ *
+ * もし、目的地に到達できない場合は bcpl::dijkstra<C, D>::INF() の値が
+ * 取得できる。
+ *
+ * @code{.cpp}
+ * #include "bcpl/types"
+ * using Dijkstra = bcpl::dijkstra<int, bcpl::ll>;
+ *
+ * Dijkstra::Graph graph(3);
+ * graph[0].emplace_back(Dijkstra::Node(1, 100));
+ * auto distances = Dijkstra::calculate(graph, 0);
+ * ASSERT(distances[2] == Dijkstra::INF());
+ * @endcode
+ */
 template <typename C, typename D> struct dijkstra {
+  /**
+   * @brief The cost value type @n
+   * コスト値用の型
+   */
   using CostType = C;
+
+  /**
+   * @brief The destination value type @n
+   * 目的地用の型
+   */
   using DistanceType = D;
   using DistancePair = std::pair<DistanceType, std::size_t>;
   using DistancePairVector = std::vector<DistancePair>;
-  using DistanceVector = std::vector<DistanceType>;
-  static DistanceType INF() { return std::numeric_limits<DistanceType>::max(); }
 
+  /**
+   * @brief distance and cost vector @n
+   * 目的地とコストのvector
+   *
+   * This value is used as calculate method return value.
+   * vector key is destination position. And value is cost.
+   *
+   * この値は calculate 関数の戻り地として使われます。
+   * vectorのキーは、目的地の場所で、値はコストになります。
+   */
+  using DistanceVector = std::vector<DistanceType>;
+  static constexpr DistanceType INF() {
+    return std::numeric_limits<DistanceType>::max();
+  }
+
+  /**
+   * @brief destination and cost object. This is used for Graph @n
+   * 目的値とコストのオブジェクト。 Graphで使われる事を想定。
+   */
   struct Node {
     std::size_t to;
     CostType cost;
 
-    Node(const std::size_t p, const CostType c) : to(p), cost(c) {}
+    /**
+     * @brief Construct a new Node Object @n
+     * Node オブジェクト用のコンストラクタ
+     *
+     * @param t destination @n 目的地
+     * @param c cost @n コスト
+     */
+    Node(const std::size_t t, const CostType c) : to(t), cost(c) {}
   };
 
+  /**
+   * @brief Graph object @n
+   * グラフオブジェクト
+   *
+   * The vector key is current position. The values(vector) are
+   * reachable destinations and cost vector.
+   *
+   * この vector のキーは 現在の場所です。値(vector)ha,
+   * 現在の場所から到達できる場所とコストの vector です。
+   */
   using Graph = std::vector<std::vector<Node>>;
 
   struct NodeGreater {
@@ -37,6 +144,15 @@ template <typename C, typename D> struct dijkstra {
   };
 
 public:
+  /**
+   * @brief calculate the shortest paths using dijkstra method @n
+   *        ダイクストラ法を使って最短経路を求める
+   *
+   * @param graph paths graph @n 経路を表すグラフ
+   * @param start start position @n 開始位置
+   * @return DistanceVector cost of each destination @n
+   *         それぞれの場所へ到達するためのコスト
+   */
   static DistanceVector calculate(const Graph &graph, const std::size_t start) {
     DistanceVector distances(graph.size(), INF());
 
