@@ -52,8 +52,12 @@ namespace bcpl {
  * を準備し、 calculate 関数を呼び出します。関数の戻り値の目的地の値を取得する
  * 事で、目的地までのコストを取得できます。
  *
+ * example:
+ *
  * @code{.cpp}
  * #include "bcpl/types"
+ * #include "bcpl/dijkstra"
+ * #include <cassert>
  * using Dijkstra = bcpl::dijkstra<bcpl::ll, int>;
  *
  * graph[0].emplace_back(1, 100);
@@ -61,7 +65,7 @@ namespace bcpl {
  * graph[1].emplace_back(3, 10);
  * graph[2].emplace_back(3, 10);
  *
- * ASSERT(graph[3] == 20);
+ * assert(graph[3] == 20);
  * @endcode
  *
  * If the destination is unreachable, you will get
@@ -72,12 +76,14 @@ namespace bcpl {
  *
  * @code{.cpp}
  * #include "bcpl/types"
+ * #include "bcpl/dijkstra"
+ * #include <cassert>
  * using Dijkstra = bcpl::dijkstra<bcpl::ll, int>;
  *
  * Dijkstra::Graph graph(3);
  * graph[0].push_back({1, 100});
  * auto distances = Dijkstra::calculate(graph, 0);
- * ASSERT(distances[2] == Dijkstra::INF());
+ * assert(distances[2] == Dijkstra::INF());
  * @endcode
  */
 template <typename D, typename C> struct dijkstra {
