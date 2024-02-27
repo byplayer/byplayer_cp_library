@@ -2,7 +2,14 @@
 
 set -ue
 
+pushd $(git rev-parse --show-toplevel)
+if [ ! -d docs ]; then
+    echo "Please create document. Run the following command."
+    echo "make doc"
+    exit 1
+fi
+popd
+
 pushd test/unittest
-./build_gtest.sh
 ./test_all.sh
 popd
