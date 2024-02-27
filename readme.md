@@ -92,6 +92,12 @@ The doxygen document uses [doxygen-awesome-css](https://jothepro.github.io/doxyg
 
 doxygen のドキュメントは、 [doxygen-awesome-css](https://jothepro.github.io/doxygen-awesome-css/) を利用しています。
 
+# change log(変更履歴)
+
+The changelog is [here](d3/de2/md_changelog.html).
+
+変更履歴は[こちら](d3/de2/md_changelog.html)にあります。
+
 # License
 
 This library is released under the 3-Clause BSD License.
