@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['ダイクストラ法_20a_0',['&lt;a href=&quot;dc/d3b/structbcpl_1_1dijkstra.html&quot; &gt;Dijkstra method(ダイクストラ法)&lt;/a&gt;',['../df/dc4/md_libraries.html#autotoc_md9',1,'']]]
+  ['uint_0',['uint',['../d5/da2/namespacebcpl.html#a614f0a4988fe57254bf2a045938aae92',1,'bcpl']]],
+  ['ull_1',['ull',['../d5/da2/namespacebcpl.html#a40520725763c297340d956e8525a2b9a',1,'bcpl']]],
+  ['use_20this_20library_2',['How to use this library?',['../index.html#autotoc_md2',1,'']]]
 ];

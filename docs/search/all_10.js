@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['this_20library_0',['This library',['../index.html#autotoc_md2',1,'How to use this library?'],['../index.html#autotoc_md0',1,'What is this library?']]],
-  ['to_1',['to',['../de/d1f/structbcpl_1_1dijkstra_1_1_node.html#ac92f3804e9eb8e430fbe242023b3d390',1,'bcpl::dijkstra::Node']]],
-  ['to_20use_20this_20library_2',['How to use this library?',['../index.html#autotoc_md2',1,'']]],
-  ['types_2ehpp_3',['types.hpp',['../dd/de3/types_8hpp.html',1,'']]]
+  ['path_20最短経路探索_0',['Finding shortest path(最短経路探索)',['../df/dc4/md_libraries.html#autotoc_md9',1,'']]],
+  ['permutation_20and_20combination_20順列組合せ_1',['permutation and combination(順列組合せ)',['../df/dc4/md_libraries.html#autotoc_md11',1,'']]],
+  ['programming_20library_2',['byplayer&apos;s competitive programming library',['../index.html',1,'']]]
 ];

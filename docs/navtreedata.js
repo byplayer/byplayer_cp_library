@@ -31,17 +31,24 @@ var NAVTREE =
     [ "expand libraries into your code before submitting", "index.html#autotoc_md3", null ],
     [ "reference", "index.html#autotoc_md4", null ],
     [ "Acknowledgments", "index.html#autotoc_md5", null ],
-    [ "License", "index.html#autotoc_md6", null ],
+    [ "change log(変更履歴)", "index.html#autotoc_md6", null ],
+    [ "License", "index.html#autotoc_md7", null ],
     [ "libraries", "df/dc4/md_libraries.html", [
-      [ "Finding shortest path(最短経路探索)", "df/dc4/md_libraries.html#autotoc_md8", [
-        [ "Dijkstra method(ダイクストラ法)", "df/dc4/md_libraries.html#autotoc_md9", null ]
+      [ "Finding shortest path(最短経路探索)", "df/dc4/md_libraries.html#autotoc_md9", [
+        [ "Dijkstra method(ダイクストラ法)", "df/dc4/md_libraries.html#autotoc_md10", null ]
       ] ],
-      [ "permutation and combination(順列組合せ)", "df/dc4/md_libraries.html#autotoc_md10", [
-        [ "combination(組合せ)", "df/dc4/md_libraries.html#autotoc_md11", [
-          [ "foreach_combination", "df/dc4/md_libraries.html#autotoc_md12", null ],
-          [ "foreach_combination", "df/dc4/md_libraries.html#autotoc_md13", null ]
+      [ "permutation and combination(順列組合せ)", "df/dc4/md_libraries.html#autotoc_md11", [
+        [ "combination(組合せ)", "df/dc4/md_libraries.html#autotoc_md12", [
+          [ "foreach_combination", "df/dc4/md_libraries.html#autotoc_md13", null ],
+          [ "foreach_combination", "df/dc4/md_libraries.html#autotoc_md14", null ]
         ] ]
       ] ]
+    ] ],
+    [ "change log(変更履歴)", "d3/de2/md_changelog.html", [
+      [ "0.1.0 / 2024-02/27", "d3/de2/md_changelog.html#autotoc_md16", null ],
+      [ "0.0.３ / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md17", null ],
+      [ "0.0.2 / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md18", null ],
+      [ "0.0.1 / 2024-02-14", "d3/de2/md_changelog.html#autotoc_md19", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

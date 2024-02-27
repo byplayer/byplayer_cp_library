@@ -1,13 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefghilmnoprstuwyダ最組順",
+  0: "012abcdefghilmnoprstuwyダ変最組順３",
   1: "dn",
   2: "b",
   3: "cdlrt",
   4: "cfino",
   5: "ct",
   6: "cdglu",
-  7: "bclps"
+  7: "bclps変"
 };
 
 var indexSectionNames =
