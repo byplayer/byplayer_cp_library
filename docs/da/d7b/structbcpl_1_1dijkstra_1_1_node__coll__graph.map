@@ -1,0 +1,7 @@
+<map id="bcpl::dijkstra&lt; D, C &gt;::Node" name="bcpl::dijkstra&lt; D, C &gt;::Node">
+<area shape="rect" id="Node000001" title="destination and cost object. This is used for Graph &#160;目的値とコストのオブジェクト。 Graphで使われる事を想定。" alt="" coords="9,94,130,135"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,62,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,45,64,92,59,94,41,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="86,5,125,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,46,80,94,75,92,93,45"/>
+</map>
