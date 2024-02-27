@@ -94,7 +94,8 @@ $(function(){initNavTree('d5/da2/namespacebcpl.html','../../'); initResizable();
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">bcpl Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -113,6 +114,19 @@ Typedefs</h2></td></tr>
 <tr class="separator:a40520725763c297340d956e8525a2b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a614f0a4988fe57254bf2a045938aae92" id="r_a614f0a4988fe57254bf2a045938aae92"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a614f0a4988fe57254bf2a045938aae92">uint</a> = unsigned int</td></tr>
 <tr class="separator:a614f0a4988fe57254bf2a045938aae92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a676f38aa58b7120f705c153a99564601" id="r_a676f38aa58b7120f705c153a99564601"><td class="memTemplParams" colspan="2">template&lt;typename T , typename F &gt; </td></tr>
+<tr class="memitem:a676f38aa58b7120f705c153a99564601"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a676f38aa58b7120f705c153a99564601">foreach_combination</a> (T &amp;v, long long k, F &amp;&amp;callback)</td></tr>
+<tr class="memdesc:a676f38aa58b7120f705c153a99564601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call callback function with all containers items combination <br  />
+ 引数のコンテナの要素の全組合せを引数ににcallback 関数を呼びます  <br /></td></tr>
+<tr class="separator:a676f38aa58b7120f705c153a99564601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3955c6a9122d5b6461cf2bcc7457a5c0" id="r_a3955c6a9122d5b6461cf2bcc7457a5c0"><td class="memTemplParams" colspan="2">template&lt;typename T , typename F &gt; </td></tr>
+<tr class="memitem:a3955c6a9122d5b6461cf2bcc7457a5c0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3955c6a9122d5b6461cf2bcc7457a5c0">foreach_combination_all</a> (const T &amp;v, long long k, F &amp;&amp;callback)</td></tr>
+<tr class="memdesc:a3955c6a9122d5b6461cf2bcc7457a5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call callback function with all containers items combination even if it includes same elements <br  />
+ 引数のコンテナの要素が同一の値を含んていてもの全組合せを引数ににcallback 関数を呼びます  <br /></td></tr>
+<tr class="separator:a3955c6a9122d5b6461cf2bcc7457a5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a1f13cd4fc98a11b5a28ac982555ac933" name="a1f13cd4fc98a11b5a28ac982555ac933"></a>
@@ -160,6 +174,200 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dd/de3/types_8hpp_source.html#l00005">5</a> of file <a class="el" href="../../dd/de3/types_8hpp_source.html">types.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a676f38aa58b7120f705c153a99564601" name="a676f38aa58b7120f705c153a99564601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676f38aa58b7120f705c153a99564601">&#9670;&#160;</a></span>foreach_combination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename F &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void bcpl::foreach_combination </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>k</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Call callback function with all containers items combination <br  />
+ 引数のコンテナの要素の全組合せを引数ににcallback 関数を呼びます </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>container type(expect bi-direction iterator) <br  />
+ コンテナ型(双方向イテレータを持っていることを期待しています) </td></tr>
+    <tr><td class="paramname">F</td><td>callback function type. expect: bool func(const T &amp;v, long long k) <br  />
+ コールバック関数型: bool func(const T &amp;v, long long k) の関数を期待しています </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>container for listing the combination <br  />
+ 組合せを列挙するコンテナ </td></tr>
+    <tr><td class="paramname">k</td><td>Number of elements in the combination <br  />
+ 組合せの要素数 </td></tr>
+    <tr><td class="paramname">callback</td><td>The callback function. expect: bool func(const T &amp;v, long long k) <br  />
+ コールバック関数。以下の型を期待しています。 bool func(const T &amp;v, long long k)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Reorder argument v to list all combination. The first k elements are target elements. If there are elements with the same value, they are regarded as the same combination and are not listed. If you list all combination even if container includes equals elements, please call <a class="el" href="#a3955c6a9122d5b6461cf2bcc7457a5c0">foreach_combination_all</a> function. The callback function is called each combination. If you return <b>true</b> in the callback function, continue listing combination. If you return <b>false</b> in the callback function, abort listing combination. In this case, argument container may be different order than it was before this function was called.</p>
+<p>全組合せを列挙するために、引数 v の 要素を並び替えていく。先頭 k 個が組合せ の要素となっています。同値の要素がある場合は、同じ組合せとみなし列挙はしません。 重複要素があってもすべての組合せを列挙したい場合は、 <a class="el" href="#a3955c6a9122d5b6461cf2bcc7457a5c0">foreach_combination_all</a> 関数を呼び出してください。 コールバック関数がそれぞれの組合せ毎に呼び出されます。もし、コールバック関数から <b>true</b> が返った場合は、列挙を続けます。もし、コールバック関数から <b>false</b> が返った 場合は、列挙を中断します。この場合、引数のコンテナの並び順は関数の呼び出し前と 異なる順番になっている場合があります。</p>
+<p>example: normal case </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bcpl/combination&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">  <span class="keyword">using </span>VI = std::vector&lt;int&gt;;</div>
+<div class="line">  <span class="keyword">using </span>VVI = std::vector&lt;VI&gt;;</div>
+<div class="line">  VI v = {0, 1, 2};</div>
+<div class="line">  VI original = v;</div>
+<div class="line">  VVI combinations;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="#a676f38aa58b7120f705c153a99564601" title="Call callback function with all containers items combination   引数のコンテナの要素の全組合せを引数ににcallback 関数を呼びます">bcpl::foreach_combination</a>(v, 2, [&amp;combinations](<span class="keyword">const</span> VI &amp;v, <span class="keywordtype">long</span> <span class="keywordtype">long</span> k) {</div>
+<div class="line">    combinations.push_back({v[0], v[1]});</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">  });</div>
+<div class="line"> </div>
+<div class="line">  assert(combinations.size() == <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(3));</div>
+<div class="line">  assert(combinations[0] == VI({0, 1}));</div>
+<div class="line">  assert(combinations[1] == VI({0, 2}));</div>
+<div class="line">  assert(combinations[2] == VI({1, 2}));</div>
+<div class="line">  assert(v == original);</div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>example: same elements </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bcpl/combination&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">  <span class="keyword">using </span>VI = std::vector&lt;int&gt;;</div>
+<div class="line">  <span class="keyword">using </span>VVI = std::vector&lt;VI&gt;;</div>
+<div class="line">  VI v = {1, 1, 2};</div>
+<div class="line">  VI original = v;</div>
+<div class="line">  VVI combinations;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="#a676f38aa58b7120f705c153a99564601" title="Call callback function with all containers items combination   引数のコンテナの要素の全組合せを引数ににcallback 関数を呼びます">bcpl::foreach_combination</a>(v, 2, [&amp;combinations](<span class="keyword">const</span> VI &amp;v, <span class="keywordtype">long</span> <span class="keywordtype">long</span> k) {</div>
+<div class="line">    combinations.push_back({v[0], v[1]});</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">  });</div>
+<div class="line"> </div>
+<div class="line">  assert(combinations.size() == <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(2));</div>
+<div class="line">  assert(combinations[0] == VI({1, 1}));</div>
+<div class="line">  assert(combinations[1] == VI({1, 2}));</div>
+<div class="line">  assert(v == original);</div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>example: break in the middle </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bcpl/combination&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">  <span class="keyword">using </span>VI = std::vector&lt;int&gt;;</div>
+<div class="line">  <span class="keyword">using </span>VVI = std::vector&lt;VI&gt;;</div>
+<div class="line">  VI v = {0, 1, 2};</div>
+<div class="line">  VI original = v;</div>
+<div class="line">  VVI combinations;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">int</span> i = 0;</div>
+<div class="line">  <a class="code hl_function" href="#a676f38aa58b7120f705c153a99564601" title="Call callback function with all containers items combination   引数のコンテナの要素の全組合せを引数ににcallback 関数を呼びます">bcpl::foreach_combination</a>(v, 2,</div>
+<div class="line">                            [&amp;combinations, &amp;i](<span class="keyword">const</span> VI &amp;v, <span class="keywordtype">long</span> <span class="keywordtype">long</span> k) {</div>
+<div class="line">                              combinations.push_back({v[0], v[1]});</div>
+<div class="line">                              ++i;</div>
+<div class="line">                              <span class="keywordflow">if</span> (i == 2) {</div>
+<div class="line">                                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">                              }</div>
+<div class="line">                              <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">                            });</div>
+<div class="line"> </div>
+<div class="line">  assert(combinations.size() == <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(2));</div>
+<div class="line">  assert(combinations[0] == VI({0, 1}));</div>
+<div class="line">  assert(combinations[1] == VI({0, 2}));</div>
+<div class="line">  assert(v != original);</div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="../../df/d00/combination_8hpp_source.html#l00135">135</a> of file <a class="el" href="../../df/d00/combination_8hpp_source.html">combination.hpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/da2/namespacebcpl_a676f38aa58b7120f705c153a99564601_icgraph.svg" width="426" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a3955c6a9122d5b6461cf2bcc7457a5c0" name="a3955c6a9122d5b6461cf2bcc7457a5c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3955c6a9122d5b6461cf2bcc7457a5c0">&#9670;&#160;</a></span>foreach_combination_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename F &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void bcpl::foreach_combination_all </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long long</td>          <td class="paramname"><span class="paramname"><em>k</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Call callback function with all containers items combination even if it includes same elements <br  />
+ 引数のコンテナの要素が同一の値を含んていてもの全組合せを引数ににcallback 関数を呼びます </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>container type(expect bi-direction iterator) <br  />
+ コンテナ型(双方向イテレータを持っていることを期待しています) </td></tr>
+    <tr><td class="paramname">F</td><td>callback function type. expect: bool func(const T &amp;v) <br  />
+ コールバック関数型: bool func(const T &amp;v) の関数を期待しています </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>container for listing the combination <br  />
+ 組合せを列挙するコンテナ </td></tr>
+    <tr><td class="paramname">k</td><td>Number of elements in the combination <br  />
+ 組合せの要素数 </td></tr>
+    <tr><td class="paramname">callback</td><td>The callback function. expect: bool func(const T &amp;v) <br  />
+ コールバック関数。以下の型を期待しています bool func(const T &amp;v)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Call the callback function with element set vector which includes only combination data. The basic usage is almost same as <a class="el" href="#a676f38aa58b7120f705c153a99564601">foreach_combination</a> function but this function list all combination set even if container includes equal element with some same data set. The callback function is called each combination. If you return <b>true</b> in the callback function, continue listing combination. If you return <b>false</b> in the callback function, abort listing combination. Even if you abort listing, original vector order isn't changed.</p>
+<p>組合せの要素を含む配列を引数にコールバック関数を呼び出す。基本的な使い方は <a class="el" href="#a676f38aa58b7120f705c153a99564601">foreach_combination</a> 関数と同じですが、この関数はコンテナの要素に同じ値を含んていても重複した組合せも含め 全ての組合せを列挙します。 コールバック関数がそれぞれの組合せ毎に呼び出されます。もし、コールバック関数から <b>true</b> が返った場合は、列挙を続けます。もし、コールバック関数から <b>false</b> が返った 場合は、列挙を中断します。この場合でも、引数のコンテナの並び順に変更はありません。 </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d00/combination_8hpp_source.html#l00211">211</a> of file <a class="el" href="../../df/d00/combination_8hpp_source.html">combination.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d5/da2/namespacebcpl_a3955c6a9122d5b6461cf2bcc7457a5c0_cgraph.svg" width="426" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>

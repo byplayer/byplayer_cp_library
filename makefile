@@ -1,6 +1,7 @@
 .PHONY: clean doc test
 clean:
 	$(RM) -r docs
+	cd test/unittest && make clean
 
 doc:
 	doxygen Doxyfile

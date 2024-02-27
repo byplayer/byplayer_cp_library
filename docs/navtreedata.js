@@ -26,18 +26,28 @@ var NAVTREE =
 [
   [ "byplayer's competitive programming library", "index.html", [
     [ "What is this library?", "index.html#autotoc_md0", null ],
-    [ "How to use this library?", "index.html#autotoc_md1", null ],
-    [ "expand libraries into your code before submitting", "index.html#autotoc_md2", null ],
-    [ "reference", "index.html#autotoc_md3", null ],
-    [ "Acknowledgments", "index.html#autotoc_md4", null ],
-    [ "License", "index.html#autotoc_md5", null ],
-    [ "Finding shortest path(最短経路探索)", "df/dc4/md_libraries.html", [
-      [ "Dijkstra method(ダイクストラ法)", "df/dc4/md_libraries.html#autotoc_md7", null ]
+    [ "libraries", "index.html#autotoc_md1", null ],
+    [ "How to use this library?", "index.html#autotoc_md2", null ],
+    [ "expand libraries into your code before submitting", "index.html#autotoc_md3", null ],
+    [ "reference", "index.html#autotoc_md4", null ],
+    [ "Acknowledgments", "index.html#autotoc_md5", null ],
+    [ "License", "index.html#autotoc_md6", null ],
+    [ "libraries", "df/dc4/md_libraries.html", [
+      [ "Finding shortest path(最短経路探索)", "df/dc4/md_libraries.html#autotoc_md8", [
+        [ "Dijkstra method(ダイクストラ法)", "df/dc4/md_libraries.html#autotoc_md9", null ]
+      ] ],
+      [ "permutation and combination(順列組合せ)", "df/dc4/md_libraries.html#autotoc_md10", [
+        [ "combination(組合せ)", "df/dc4/md_libraries.html#autotoc_md11", [
+          [ "foreach_combination", "df/dc4/md_libraries.html#autotoc_md12", null ],
+          [ "foreach_combination", "df/dc4/md_libraries.html#autotoc_md13", null ]
+        ] ]
+      ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="../../dc/d3b/structbcpl_1_1dijkstra.html#ae635e9e38ac026ce53659a93b63accf1" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="../../dc/d3b/structbcpl_1_1dijkstra.html#a6cc7b72146c8967d4345cfa1cc6fc17f" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="246.5,-19.25 152.5,-19.25 152.5,0 246.5,0 246.5,-19.25"/>
 <text text-anchor="middle" x="199.5" y="-5.75" font-family="Helvetica,sans-Serif" font-size="10.00">bcpl::dijkstra::INF</text>
 </a>

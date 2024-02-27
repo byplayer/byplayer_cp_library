@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['finding_20shortest_20path_20最短経路探索_0',['Finding shortest path(最短経路探索)',['../df/dc4/md_libraries.html',1,'']]]
+  ['libraries_0',['libraries',['../df/dc4/md_libraries.html',1,'']]],
+  ['library_1',['byplayer&apos;s competitive programming library',['../index.html',1,'']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>byplayer&#39;s competitive programming library: bcpl::dijkstra&lt; C, D &gt; Struct Template Reference</title>
+<title>byplayer&#39;s competitive programming library: bcpl::dijkstra&lt; D, C &gt; Struct Template Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -97,7 +97,7 @@ $(function(){initNavTree('dc/d3b/structbcpl_1_1dijkstra.html','../../'); initRes
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../d9/d0e/structbcpl_1_1dijkstra-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">bcpl::dijkstra&lt; C, D &gt; Struct Template Reference</div></div>
+  <div class="headertitle"><div class="title">bcpl::dijkstra&lt; D, C &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -117,92 +117,97 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a9089565644fc3980eefb418b2b7b508f" id="r_a9089565644fc3980eefb418b2b7b508f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9089565644fc3980eefb418b2b7b508f">CostType</a> = C</td></tr>
-<tr class="memdesc:a9089565644fc3980eefb418b2b7b508f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cost value type <br  />
+<tr class="memitem:a1b09c587006e1128728925c66dc6240a" id="r_a1b09c587006e1128728925c66dc6240a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b09c587006e1128728925c66dc6240a">CostType</a> = C</td></tr>
+<tr class="memdesc:a1b09c587006e1128728925c66dc6240a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cost value type <br  />
 コスト値用の型  <br /></td></tr>
-<tr class="separator:a9089565644fc3980eefb418b2b7b508f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae950c03a68485c8bc62a2fca02595d1d" id="r_ae950c03a68485c8bc62a2fca02595d1d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae950c03a68485c8bc62a2fca02595d1d">DistanceType</a> = D</td></tr>
-<tr class="memdesc:ae950c03a68485c8bc62a2fca02595d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destination value type <br  />
+<tr class="separator:a1b09c587006e1128728925c66dc6240a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61bd727f993e7794e29227e253e25c0c" id="r_a61bd727f993e7794e29227e253e25c0c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61bd727f993e7794e29227e253e25c0c">DistanceType</a> = D</td></tr>
+<tr class="memdesc:a61bd727f993e7794e29227e253e25c0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The destination value type <br  />
 目的地用の型  <br /></td></tr>
-<tr class="separator:ae950c03a68485c8bc62a2fca02595d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae412e3cfa424d95dec9195acb41b4ad8" id="r_ae412e3cfa424d95dec9195acb41b4ad8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae412e3cfa424d95dec9195acb41b4ad8">DistancePair</a> = std::pair&lt;<a class="el" href="#ae950c03a68485c8bc62a2fca02595d1d">DistanceType</a>, std::size_t&gt;</td></tr>
-<tr class="separator:ae412e3cfa424d95dec9195acb41b4ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ab74f7c44768f70a305433bd31a4dac" id="r_a9ab74f7c44768f70a305433bd31a4dac"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ab74f7c44768f70a305433bd31a4dac">DistancePairVector</a> = std::vector&lt;<a class="el" href="#ae412e3cfa424d95dec9195acb41b4ad8">DistancePair</a>&gt;</td></tr>
-<tr class="separator:a9ab74f7c44768f70a305433bd31a4dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af664b772ee9d647a496ed41e0a089fb0" id="r_af664b772ee9d647a496ed41e0a089fb0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af664b772ee9d647a496ed41e0a089fb0">DistanceVector</a> = std::vector&lt;<a class="el" href="#ae950c03a68485c8bc62a2fca02595d1d">DistanceType</a>&gt;</td></tr>
-<tr class="memdesc:af664b772ee9d647a496ed41e0a089fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">distance and cost vector <br  />
+<tr class="separator:a61bd727f993e7794e29227e253e25c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb8b3ed9be57ed3d1e52f3f85b77f3eb" id="r_adb8b3ed9be57ed3d1e52f3f85b77f3eb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb8b3ed9be57ed3d1e52f3f85b77f3eb">DistancePair</a> = std::pair&lt;<a class="el" href="#a61bd727f993e7794e29227e253e25c0c">DistanceType</a>, std::size_t&gt;</td></tr>
+<tr class="separator:adb8b3ed9be57ed3d1e52f3f85b77f3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a746649c23fa47579fd5f4897c2cb583c" id="r_a746649c23fa47579fd5f4897c2cb583c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a746649c23fa47579fd5f4897c2cb583c">DistancePairVector</a> = std::vector&lt;<a class="el" href="#adb8b3ed9be57ed3d1e52f3f85b77f3eb">DistancePair</a>&gt;</td></tr>
+<tr class="separator:a746649c23fa47579fd5f4897c2cb583c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1b58936a35f5a060f3a9bb705afa434" id="r_af1b58936a35f5a060f3a9bb705afa434"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1b58936a35f5a060f3a9bb705afa434">DistanceVector</a> = std::vector&lt;<a class="el" href="#a61bd727f993e7794e29227e253e25c0c">DistanceType</a>&gt;</td></tr>
+<tr class="memdesc:af1b58936a35f5a060f3a9bb705afa434"><td class="mdescLeft">&#160;</td><td class="mdescRight">distance and cost vector <br  />
 目的地とコストのvector  <br /></td></tr>
-<tr class="separator:af664b772ee9d647a496ed41e0a089fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a428756039ec322bd284da4bddc83329d" id="r_a428756039ec322bd284da4bddc83329d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a428756039ec322bd284da4bddc83329d">Graph</a> = std::vector&lt;std::vector&lt;<a class="el" href="../../de/d1f/structbcpl_1_1dijkstra_1_1_node.html">Node</a>&gt;&gt;</td></tr>
-<tr class="memdesc:a428756039ec322bd284da4bddc83329d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Graph object <br  />
+<tr class="separator:af1b58936a35f5a060f3a9bb705afa434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99526b829159e76066b65f7dfdca97cc" id="r_a99526b829159e76066b65f7dfdca97cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99526b829159e76066b65f7dfdca97cc">Graph</a> = std::vector&lt;std::vector&lt;<a class="el" href="../../de/d1f/structbcpl_1_1dijkstra_1_1_node.html">Node</a>&gt;&gt;</td></tr>
+<tr class="memdesc:a99526b829159e76066b65f7dfdca97cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Graph object <br  />
 グラフオブジェクト  <br /></td></tr>
-<tr class="separator:a428756039ec322bd284da4bddc83329d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a99526b829159e76066b65f7dfdca97cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae635e9e38ac026ce53659a93b63accf1" id="r_ae635e9e38ac026ce53659a93b63accf1"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="#ae950c03a68485c8bc62a2fca02595d1d">DistanceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae635e9e38ac026ce53659a93b63accf1">INF</a> ()</td></tr>
-<tr class="separator:ae635e9e38ac026ce53659a93b63accf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a638345eaaa00ea891487a736fe6711c9" id="r_a638345eaaa00ea891487a736fe6711c9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#af664b772ee9d647a496ed41e0a089fb0">DistanceVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a638345eaaa00ea891487a736fe6711c9">calculate</a> (const <a class="el" href="#a428756039ec322bd284da4bddc83329d">Graph</a> &amp;graph, const std::size_t start)</td></tr>
-<tr class="memdesc:a638345eaaa00ea891487a736fe6711c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the shortest paths using dijkstra method <br  />
+<tr class="memitem:a6cc7b72146c8967d4345cfa1cc6fc17f" id="r_a6cc7b72146c8967d4345cfa1cc6fc17f"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="#a61bd727f993e7794e29227e253e25c0c">DistanceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cc7b72146c8967d4345cfa1cc6fc17f">INF</a> ()</td></tr>
+<tr class="separator:a6cc7b72146c8967d4345cfa1cc6fc17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe70952bcfa2c7d54f3009b67ef66347" id="r_abe70952bcfa2c7d54f3009b67ef66347"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#af1b58936a35f5a060f3a9bb705afa434">DistanceVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe70952bcfa2c7d54f3009b67ef66347">calculate</a> (const <a class="el" href="#a99526b829159e76066b65f7dfdca97cc">Graph</a> &amp;graph, const std::size_t start)</td></tr>
+<tr class="memdesc:abe70952bcfa2c7d54f3009b67ef66347"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the shortest paths using dijkstra method <br  />
  ダイクストラ法を使って最短経路を求める  <br /></td></tr>
-<tr class="separator:a638345eaaa00ea891487a736fe6711c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:abe70952bcfa2c7d54f3009b67ef66347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename C, typename D&gt;<br />
-struct bcpl::dijkstra&lt; C, D &gt;</div><p>Library for finding shortest path using Dijkstra method(ダイクストラ法で最短経路を求めるライブラリ) </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename D, typename C&gt;<br />
+struct bcpl::dijkstra&lt; D, C &gt;</div><p>Library for finding shortest path using Dijkstra method(ダイクストラ法で最短経路を求めるライブラリ) </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">C</td><td>cost value type <br  />
- expect: int, unsigned int, long long, unsigned long long <br  />
- コストの値用のタイプ <br  />
- 期待値: int, unsigned int, long long, unsigned long long ) </td></tr>
     <tr><td class="paramname">D</td><td>destination position type <br  />
  expect: int, unsigned int, long long, unsigned long long <br  />
  位置情報保存用のタイプ <br  />
  期待値: int, unsigned int, long long, unsigned long long</td></tr>
+    <tr><td class="paramname">C</td><td>cost value type <br  />
+ expect: int, unsigned int, long long, unsigned long long <br  />
+ コストの値用のタイプ <br  />
+ 期待値: int, unsigned int, long long, unsigned long long )</td></tr>
   </table>
   </dd>
 </dl>
 <p>This library finds shortest path using Dijkstra method.</p>
 <p>これは、ダイクストラ法で最短経路を求めるライブラリです。</p>
-<p>There are paths as follow.</p>
-<p>以下のような経路があるとします。</p>
+<p>There are paths as follow. [num] is destination. (num) is cost to move.</p>
+<p>以下のような経路があるとします。 [数字] は目的地。[数値] は移動時のコスト。</p>
 <pre>
-[0] -(100)- [2] -(10)- 4
+[0] -(100)- [2] -(10)- [4]
   └ -( 10)- [3] -(10)┘
 </pre><p>There are two paths from 1 to 4. In this case you need prepare Graph object as follow and call calculate method. Then, you receive destination and cost vector. You can get destination cost value when you access destination value of return vector.</p>
 <p>1から4まで到達するのに2つの経路があります。この時、以下のようなGraphオブジェクト を準備し、 calculate 関数を呼び出します。関数の戻り値の目的地の値を取得する 事で、目的地までのコストを取得できます。</p>
+<p>example:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bcpl/types&quot;</span></div>
-<div class="line"><span class="keyword">using </span>Dijkstra = <a class="code hl_struct" href="../../dc/d3b/structbcpl_1_1dijkstra.html" title="Library for finding shortest path using Dijkstra method(ダイクストラ法で最短経路を求めるライブラリ)">bcpl::dijkstra&lt;int, bcpl::ll&gt;</a>;</div>
+<div class="line"><span class="preprocessor">#include &quot;bcpl/dijkstra&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><span class="keyword">using </span>Dijkstra = <a class="code hl_struct" href="../../dc/d3b/structbcpl_1_1dijkstra.html" title="Library for finding shortest path using Dijkstra method(ダイクストラ法で最短経路を求めるライブラリ)">bcpl::dijkstra&lt;bcpl::ll, int&gt;</a>;</div>
 <div class="line"> </div>
-<div class="line">graph[0].emplace_back(Dijkstra::Node(1, 100));</div>
-<div class="line">graph[0].emplace_back(Dijkstra::Node(2, 10));</div>
-<div class="line">graph[1].emplace_back(Dijkstra::Node(3, 10));</div>
-<div class="line">graph[2].emplace_back(Dijkstra::Node(3, 10));</div>
+<div class="line">graph[0].emplace_back(1, 100);</div>
+<div class="line">graph[0].emplace_back(2, 10);</div>
+<div class="line">graph[1].emplace_back(3, 10);</div>
+<div class="line">graph[2].emplace_back(3, 10);</div>
 <div class="line"> </div>
-<div class="line">ASSERT(graph[3] == 20);</div>
-</div><!-- fragment --><p>If the destination is unreachable, you will get <a class="el" href="#ae635e9e38ac026ce53659a93b63accf1">bcpl::dijkstra&lt;C, D&gt;::INF()</a> value as result.</p>
-<p>もし、目的地に到達できない場合は <a class="el" href="#ae635e9e38ac026ce53659a93b63accf1">bcpl::dijkstra&lt;C, D&gt;::INF()</a> の値が 取得できる。</p>
+<div class="line">assert(graph[3] == 20);</div>
+</div><!-- fragment --><p>If the destination is unreachable, you will get <a class="el" href="#a6cc7b72146c8967d4345cfa1cc6fc17f">bcpl::dijkstra&lt;D, C&gt;::INF()</a> value as result.</p>
+<p>もし、目的地に到達できない場合は <a class="el" href="#a6cc7b72146c8967d4345cfa1cc6fc17f">bcpl::dijkstra&lt;D, C&gt;::INF()</a> の値が 取得できる。</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bcpl/types&quot;</span></div>
-<div class="line"><span class="keyword">using </span>Dijkstra = <a class="code hl_struct" href="../../dc/d3b/structbcpl_1_1dijkstra.html" title="Library for finding shortest path using Dijkstra method(ダイクストラ法で最短経路を求めるライブラリ)">bcpl::dijkstra&lt;int, bcpl::ll&gt;</a>;</div>
+<div class="line"><span class="preprocessor">#include &quot;bcpl/dijkstra&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><span class="keyword">using </span>Dijkstra = <a class="code hl_struct" href="../../dc/d3b/structbcpl_1_1dijkstra.html" title="Library for finding shortest path using Dijkstra method(ダイクストラ法で最短経路を求めるライブラリ)">bcpl::dijkstra&lt;bcpl::ll, int&gt;</a>;</div>
 <div class="line"> </div>
 <div class="line">Dijkstra::Graph graph(3);</div>
-<div class="line">graph[0].emplace_back(Dijkstra::Node(1, 100));</div>
+<div class="line">graph[0].push_back({1, 100});</div>
 <div class="line"><span class="keyword">auto</span> distances = Dijkstra::calculate(graph, 0);</div>
-<div class="line">ASSERT(distances[2] == Dijkstra::INF());</div>
+<div class="line">assert(distances[2] == Dijkstra::INF());</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00080">80</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00089">89</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a9089565644fc3980eefb418b2b7b508f" name="a9089565644fc3980eefb418b2b7b508f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9089565644fc3980eefb418b2b7b508f">&#9670;&#160;</a></span>CostType</h2>
+<a id="a1b09c587006e1128728925c66dc6240a" name="a1b09c587006e1128728925c66dc6240a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b09c587006e1128728925c66dc6240a">&#9670;&#160;</a></span>CostType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename D &gt; </div>
+template&lt;typename D , typename C &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; C, D &gt;::CostType = C</td>
+          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; D, C &gt;::CostType = C</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -210,56 +215,56 @@ template&lt;typename C , typename D &gt; </div>
 <p>The cost value type <br  />
 コスト値用の型 </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00094">94</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ae412e3cfa424d95dec9195acb41b4ad8" name="ae412e3cfa424d95dec9195acb41b4ad8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae412e3cfa424d95dec9195acb41b4ad8">&#9670;&#160;</a></span>DistancePair</h2>
+<a id="adb8b3ed9be57ed3d1e52f3f85b77f3eb" name="adb8b3ed9be57ed3d1e52f3f85b77f3eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb8b3ed9be57ed3d1e52f3f85b77f3eb">&#9670;&#160;</a></span>DistancePair</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename D &gt; </div>
+template&lt;typename D , typename C &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; C, D &gt;::DistancePair = std::pair&lt;<a class="el" href="#ae950c03a68485c8bc62a2fca02595d1d">DistanceType</a>, std::size_t&gt;</td>
+          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; D, C &gt;::DistancePair = std::pair&lt;<a class="el" href="#a61bd727f993e7794e29227e253e25c0c">DistanceType</a>, std::size_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00092">92</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00101">101</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9ab74f7c44768f70a305433bd31a4dac" name="a9ab74f7c44768f70a305433bd31a4dac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ab74f7c44768f70a305433bd31a4dac">&#9670;&#160;</a></span>DistancePairVector</h2>
+<a id="a746649c23fa47579fd5f4897c2cb583c" name="a746649c23fa47579fd5f4897c2cb583c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a746649c23fa47579fd5f4897c2cb583c">&#9670;&#160;</a></span>DistancePairVector</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename D &gt; </div>
+template&lt;typename D , typename C &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; C, D &gt;::DistancePairVector = std::vector&lt;<a class="el" href="#ae412e3cfa424d95dec9195acb41b4ad8">DistancePair</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; D, C &gt;::DistancePairVector = std::vector&lt;<a class="el" href="#adb8b3ed9be57ed3d1e52f3f85b77f3eb">DistancePair</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00093">93</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00102">102</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ae950c03a68485c8bc62a2fca02595d1d" name="ae950c03a68485c8bc62a2fca02595d1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae950c03a68485c8bc62a2fca02595d1d">&#9670;&#160;</a></span>DistanceType</h2>
+<a id="a61bd727f993e7794e29227e253e25c0c" name="a61bd727f993e7794e29227e253e25c0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61bd727f993e7794e29227e253e25c0c">&#9670;&#160;</a></span>DistanceType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename D &gt; </div>
+template&lt;typename D , typename C &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; C, D &gt;::DistanceType = D</td>
+          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; D, C &gt;::DistanceType = D</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -267,20 +272,20 @@ template&lt;typename C , typename D &gt; </div>
 <p>The destination value type <br  />
 目的地用の型 </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00100">100</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 
 </div>
 </div>
-<a id="af664b772ee9d647a496ed41e0a089fb0" name="af664b772ee9d647a496ed41e0a089fb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af664b772ee9d647a496ed41e0a089fb0">&#9670;&#160;</a></span>DistanceVector</h2>
+<a id="af1b58936a35f5a060f3a9bb705afa434" name="af1b58936a35f5a060f3a9bb705afa434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1b58936a35f5a060f3a9bb705afa434">&#9670;&#160;</a></span>DistanceVector</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename D &gt; </div>
+template&lt;typename D , typename C &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; C, D &gt;::DistanceVector = std::vector&lt;<a class="el" href="#ae950c03a68485c8bc62a2fca02595d1d">DistanceType</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; D, C &gt;::DistanceVector = std::vector&lt;<a class="el" href="#a61bd727f993e7794e29227e253e25c0c">DistanceType</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -290,20 +295,20 @@ template&lt;typename C , typename D &gt; </div>
 <p>This value is used as calculate method return value. vector key is destination position. And value is cost.</p>
 <p>この値は calculate 関数の戻り地として使われます。 vectorのキーは、目的地の場所で、値はコストになります。 </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00105">105</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00114">114</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a428756039ec322bd284da4bddc83329d" name="a428756039ec322bd284da4bddc83329d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a428756039ec322bd284da4bddc83329d">&#9670;&#160;</a></span>Graph</h2>
+<a id="a99526b829159e76066b65f7dfdca97cc" name="a99526b829159e76066b65f7dfdca97cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99526b829159e76066b65f7dfdca97cc">&#9670;&#160;</a></span>Graph</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename D &gt; </div>
+template&lt;typename D , typename C &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; C, D &gt;::Graph = std::vector&lt;std::vector&lt;<a class="el" href="../../de/d1f/structbcpl_1_1dijkstra_1_1_node.html">Node</a>&gt;&gt;</td>
+          <td class="memname">using <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; D, C &gt;::Graph = std::vector&lt;std::vector&lt;<a class="el" href="../../de/d1f/structbcpl_1_1dijkstra_1_1_node.html">Node</a>&gt;&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -313,26 +318,26 @@ template&lt;typename C , typename D &gt; </div>
 <p>The vector key is current position. The values(vector) are reachable destinations and cost vector.</p>
 <p>この vector のキーは 現在の場所です。値(vector)ha, 現在の場所から到達できる場所とコストの vector です。 </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00138">138</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00140">140</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a638345eaaa00ea891487a736fe6711c9" name="a638345eaaa00ea891487a736fe6711c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a638345eaaa00ea891487a736fe6711c9">&#9670;&#160;</a></span>calculate()</h2>
+<a id="abe70952bcfa2c7d54f3009b67ef66347" name="abe70952bcfa2c7d54f3009b67ef66347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe70952bcfa2c7d54f3009b67ef66347">&#9670;&#160;</a></span>calculate()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename D &gt; </div>
+template&lt;typename D , typename C &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="#af664b772ee9d647a496ed41e0a089fb0">DistanceVector</a> <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; C, D &gt;::calculate </td>
+          <td class="memname">static <a class="el" href="#af1b58936a35f5a060f3a9bb705afa434">DistanceVector</a> <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; D, C &gt;::calculate </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a428756039ec322bd284da4bddc83329d">Graph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em>, </span></td>
+          <td class="paramtype">const <a class="el" href="#a99526b829159e76066b65f7dfdca97cc">Graph</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>graph</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -361,28 +366,28 @@ template&lt;typename C , typename D &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>DistanceVector cost of each destination <br  />
  それぞれの場所へ到達するためのコスト </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00156">156</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00158">158</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d3b/structbcpl_1_1dijkstra_a638345eaaa00ea891487a736fe6711c9_cgraph.svg" width="340" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d3b/structbcpl_1_1dijkstra_abe70952bcfa2c7d54f3009b67ef66347_cgraph.svg" width="340" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="ae635e9e38ac026ce53659a93b63accf1" name="ae635e9e38ac026ce53659a93b63accf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae635e9e38ac026ce53659a93b63accf1">&#9670;&#160;</a></span>INF()</h2>
+<a id="a6cc7b72146c8967d4345cfa1cc6fc17f" name="a6cc7b72146c8967d4345cfa1cc6fc17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cc7b72146c8967d4345cfa1cc6fc17f">&#9670;&#160;</a></span>INF()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename C , typename D &gt; </div>
+template&lt;typename D , typename C &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr <a class="el" href="#ae950c03a68485c8bc62a2fca02595d1d">DistanceType</a> <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; C, D &gt;::INF </td>
+          <td class="memname">static constexpr <a class="el" href="#a61bd727f993e7794e29227e253e25c0c">DistanceType</a> <a class="el" href="../../dc/d3b/structbcpl_1_1dijkstra.html">bcpl::dijkstra</a>&lt; D, C &gt;::INF </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -395,11 +400,11 @@ template&lt;typename C , typename D &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00106">106</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html#l00115">115</a> of file <a class="el" href="../../d3/d11/dijkstra_8hpp_source.html">dijkstra.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d3b/structbcpl_1_1dijkstra_ae635e9e38ac026ce53659a93b63accf1_icgraph.svg" width="340" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/d3b/structbcpl_1_1dijkstra_a6cc7b72146c8967d4345cfa1cc6fc17f_icgraph.svg" width="340" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

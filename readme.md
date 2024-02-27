@@ -10,6 +10,12 @@ The source code is on [github's byplayer_cp_library](https://github.com/byplayer
 このライブラリは競技プログラミングを目的に作られています。
 ソースコードは、[github の byplayer_cp_library](https://github.com/byplayer/byplayer_cp_library)にあります。
 
+# libraries
+
+There are [library details in the link](df/dc4/md_libraries.html).
+
+[ライブラリの詳細はこのリンクの先](df/dc4/md_libraries.html)にあります。
+
 # How to use this library?
 
 Please clone the source code on any directory.

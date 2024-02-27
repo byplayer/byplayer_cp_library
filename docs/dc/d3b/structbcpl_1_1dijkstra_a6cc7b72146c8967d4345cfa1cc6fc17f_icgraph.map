@@ -1,0 +1,5 @@
+<map id="bcpl::dijkstra::INF" name="bcpl::dijkstra::INF">
+<area shape="rect" id="Node000001" title=" " alt="" coords="209,5,334,31"/>
+<area shape="rect" id="Node000002" href="$dc/d3b/structbcpl_1_1dijkstra.html#abe70952bcfa2c7d54f3009b67ef66347" title="calculate the shortest paths using dijkstra method &#160;&#160;ダイクストラ法を使って最短経路を求める" alt="" coords="5,5,161,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,21,161,21,161,16,193,16"/>
+</map>
