@@ -1,6 +1,6 @@
 # change log(変更履歴)
 
-## 0.0.4 / 2024-02/27
+## 0.1.0 / 2024-02/27
 
 - add [foreach_combination](https://byplayer.github.io/byplayer_cp_library/d5/da2/namespacebcpl.html#a676f38aa58b7120f705c153a99564601) method
 - [foreach_combination](https://byplayer.github.io/byplayer_cp_library/d5/da2/namespacebcpl.html#a676f38aa58b7120f705c153a99564601) 関数を追加

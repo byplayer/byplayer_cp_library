@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "0124abcdefghilmnoprstuwyダ変最組順３",
+  0: "012abcdefghilmnoprstuwyダ変最組順３",
   1: "dn",
   2: "b",
   3: "cdlrt",

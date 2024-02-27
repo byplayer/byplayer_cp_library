@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../d0/d74/structbcpl_1_1dijkstra_1_1_node_greater.html#ad4cfcbef356e9f79ecf52e3d6f7b4280',1,'bcpl::dijkstra::NodeGreater']]]
+  ['path_20最短経路探索_0',['Finding shortest path(最短経路探索)',['../df/dc4/md_libraries.html#autotoc_md9',1,'']]],
+  ['permutation_20and_20combination_20順列組合せ_1',['permutation and combination(順列組合せ)',['../df/dc4/md_libraries.html#autotoc_md11',1,'']]],
+  ['programming_20library_2',['byplayer&apos;s competitive programming library',['../index.html',1,'']]]
 ];

@@ -45,7 +45,7 @@ var NAVTREE =
       ] ]
     ] ],
     [ "change log(変更履歴)", "d3/de2/md_changelog.html", [
-      [ "0.0.4 / 2024-02/27", "d3/de2/md_changelog.html#autotoc_md16", null ],
+      [ "0.1.0 / 2024-02/27", "d3/de2/md_changelog.html#autotoc_md16", null ],
       [ "0.0.３ / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md17", null ],
       [ "0.0.2 / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md18", null ],
       [ "0.0.1 / 2024-02-14", "d3/de2/md_changelog.html#autotoc_md19", null ]

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_20is_20this_20library_0',['What is this library?',['../index.html#autotoc_md0',1,'']]]
+  ['your_20code_20before_20submitting_0',['expand libraries into your code before submitting',['../index.html#autotoc_md3',1,'']]]
 ];
