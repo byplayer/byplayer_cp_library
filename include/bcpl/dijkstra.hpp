@@ -124,7 +124,7 @@ template <typename D, typename C> struct dijkstra {
     std::size_t to;
     CostType cost;
 
-    Node(const size_t t, const CostType c) : to(t), cost(c) {}
+    Node(const std::size_t t, const CostType c) : to(t), cost(c) {}
   };
 
   /**
