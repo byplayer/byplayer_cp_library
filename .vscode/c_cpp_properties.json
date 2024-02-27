@@ -3,8 +3,10 @@
     {
       "name": "Mac",
       "includePath": [
+        "${workspaceFolder}/ac-library",
         "${workspaceFolder}/include",
-        "${workspaceFolder}/test/unittest/gtest/include"
+        "${workspaceFolder}/test/unittest/gtest_clang++/include",
+        "${workspaceFolder}/test/unittest/include"
       ],
       "defines": [],
       "macFrameworkPath": [

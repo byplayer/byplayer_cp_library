@@ -17,15 +17,16 @@ namespace bcpl {
  * @brief Library for finding shortest path using Dijkstra
  * method(ダイクストラ法で最短経路を求めるライブラリ)
  *
+ * @tparam D destination position type @n
+ *           expect: int, unsigned int, long long, unsigned long long @n
+ *           位置情報保存用のタイプ @n
+ *           期待値: int, unsigned int, long long, unsigned long long
+ *
  * @tparam C cost value type @n
  *         expect: int, unsigned int, long long, unsigned long long @n
  *         コストの値用のタイプ @n
  *         期待値: int, unsigned int, long long, unsigned long long
  * )
- * @tparam D destination position type @n
- *           expect: int, unsigned int, long long, unsigned long long @n
- *           位置情報保存用のタイプ @n
- *           期待値: int, unsigned int, long long, unsigned long long
  *
  * This library finds shortest path using Dijkstra method.
  *
@@ -53,33 +54,33 @@ namespace bcpl {
  *
  * @code{.cpp}
  * #include "bcpl/types"
- * using Dijkstra = bcpl::dijkstra<int, bcpl::ll>;
+ * using Dijkstra = bcpl::dijkstra<bcpl::ll, int>;
  *
- * graph[0].emplace_back(Dijkstra::Node(1, 100));
- * graph[0].emplace_back(Dijkstra::Node(2, 10));
- * graph[1].emplace_back(Dijkstra::Node(3, 10));
- * graph[2].emplace_back(Dijkstra::Node(3, 10));
+ * graph[0].emplace_back(1, 100);
+ * graph[0].emplace_back(2, 10);
+ * graph[1].emplace_back(3, 10);
+ * graph[2].emplace_back(3, 10);
  *
  * ASSERT(graph[3] == 20);
  * @endcode
  *
  * If the destination is unreachable, you will get
- * bcpl::dijkstra<C, D>::INF() value as result.
+ * bcpl::dijkstra<D, C>::INF() value as result.
  *
- * もし、目的地に到達できない場合は bcpl::dijkstra<C, D>::INF() の値が
+ * もし、目的地に到達できない場合は bcpl::dijkstra<D, C>::INF() の値が
  * 取得できる。
  *
  * @code{.cpp}
  * #include "bcpl/types"
- * using Dijkstra = bcpl::dijkstra<int, bcpl::ll>;
+ * using Dijkstra = bcpl::dijkstra<bcpl::ll, int>;
  *
  * Dijkstra::Graph graph(3);
- * graph[0].emplace_back(Dijkstra::Node(1, 100));
+ * graph[0].push_back({1, 100});
  * auto distances = Dijkstra::calculate(graph, 0);
  * ASSERT(distances[2] == Dijkstra::INF());
  * @endcode
  */
-template <typename C, typename D> struct dijkstra {
+template <typename D, typename C> struct dijkstra {
   /**
    * @brief The cost value type @n
    * コスト値用の型
@@ -117,14 +118,7 @@ template <typename C, typename D> struct dijkstra {
     std::size_t to;
     CostType cost;
 
-    /**
-     * @brief Construct a new Node Object @n
-     * Node オブジェクト用のコンストラクタ
-     *
-     * @param t destination @n 目的地
-     * @param c cost @n コスト
-     */
-    Node(const std::size_t t, const CostType c) : to(t), cost(c) {}
+    Node(const size_t t, const CostType c) : to(t), cost(c) {}
   };
 
   /**

@@ -1,30 +1,18 @@
 #include "bcpl/dijkstra"
-
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wpadded"
-#pragma clang diagnostic ignored "-Wweak-vtables"
-#endif // __clang__
-#include <gtest/gtest.h>
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif // __clang__
-
-#ifdef __clang__
-#pragma clang diagnostic ignored "-Wglobal-constructors"
-#endif // __clang__
+#include "gtest_include.hpp"
 
 namespace {
 using ll = long long;
-using Dijkstra = bcpl::dijkstra<int, ll>;
+using Dijkstra = bcpl::dijkstra<ll, int>;
 } // namespace
 
 TEST(Dijkstra, cost) {
   Dijkstra::Graph graph(4);
-  graph[0].emplace_back(Dijkstra::Node(1, 100));
-  graph[0].emplace_back(Dijkstra::Node(2, 10));
-  graph[1].emplace_back(Dijkstra::Node(3, 10));
-  graph[2].emplace_back(Dijkstra::Node(3, 10));
+  graph[0].emplace_back(1, 100);
+  graph[0].emplace_back(1, 100);
+  graph[0].emplace_back(2, 10);
+  graph[1].emplace_back(3, 10);
+  graph[2].emplace_back(3, 10);
 
   auto distances = Dijkstra::calculate(graph, 0);
   ASSERT_EQ(20, distances[3]);
@@ -32,7 +20,7 @@ TEST(Dijkstra, cost) {
 
 TEST(Dijkstra, unreachable) {
   Dijkstra::Graph graph(3);
-  graph[0].emplace_back(Dijkstra::Node(1, 100));
+  graph[0].push_back({1, 100});
   auto distances = Dijkstra::calculate(graph, 0);
   ASSERT_EQ(Dijkstra::INF(), distances[2]);
 }
