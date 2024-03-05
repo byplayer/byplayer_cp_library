@@ -1,0 +1,8 @@
+<map id="bcpl::is_prime" name="bcpl::is_prime">
+<area shape="rect" id="Node000001" title="Determines whether a number is prime or not &#160;&#160;素数かどうかの判定を行います" alt="" coords="335,29,437,55"/>
+<area shape="rect" id="Node000002" href="$d5/da2/namespacebcpl.html#ad5701c5b505560e0a723ae77add60825" title="The function returns the smallest prime divisible of n &#160;&#160;nを割り切れるの最小の素数を返関数" alt="" coords="196,29,287,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,45,288,45,288,40,320,40"/>
+<area shape="rect" id="Node000003" href="$d5/da2/namespacebcpl.html#afb5340978e49756eb1f959b86f5252bd" title="Prime factorize &#160;&#160;素因数分解をする関数" alt="" coords="5,29,148,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="180,45,148,45,148,40,180,40"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="104,16,95,10,76,8,59,10,50,15,48,20,53,28,48,30,43,21,46,11,58,5,77,3,97,5,107,12"/>
+</map>

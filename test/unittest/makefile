@@ -97,7 +97,7 @@ $(DEPENDS): $(PREDEPENDS)
 HEADER_DIR = include
 HEADERS = $(wildcard $(HEADER_DIR)/*.h)
 
-INCLUDES += -I../ac-library
+INCLUDES += -I../../ac-library
 INCLUDES += -I../../include
 INCLUDES += -I./gtest_$(CXX)/include
 

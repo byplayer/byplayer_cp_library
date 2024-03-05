@@ -1,0 +1,5 @@
+<map id="bcpl::is_prime" name="bcpl::is_prime">
+<area shape="rect" id="Node000001" title="Determines whether a number is prime or not &#160;&#160;素数かどうかの判定を行います" alt="" coords="5,5,108,31"/>
+<area shape="rect" id="Node000002" href="$d5/da2/namespacebcpl.html#a58c3ca1e46633af7c7fb85a65b28fe62" title="calculate a ** n mod m &#160;&#160;a の n 乗 mod m を求めます" alt="" coords="156,5,265,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,16,140,16,140,21,108,21"/>
+</map>
