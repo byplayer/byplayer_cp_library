@@ -4,9 +4,13 @@ set -ue
 
 pushd $(git rev-parse --show-toplevel)
 if [ ! -d docs ]; then
-    echo "Please create document. Run the following command."
-    echo "make doc"
+  make doc
+  git diff docs --exit-code --quiet
+  if [ $? -eq 0 ]; then
+    echo "There are unstaged documents."
+    echo "Please stage files under docs."
     exit 1
+  fi
 fi
 popd
 

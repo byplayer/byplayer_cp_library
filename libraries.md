@@ -27,3 +27,29 @@ List the combination.
 List all the combinations even if the container includes equal elements.
 
 コンテナが同値の要素を含んでいても重複した組合せも含め全ての組合せを列挙する。
+
+## math libraries(数学系ライブラリ)
+
+### [pow_mod](d5/da2/namespacebcpl.html#a58c3ca1e46633af7c7fb85a65b28fe62)
+
+calculate a \*\* n mod m @n.
+
+a の n 乗 mod m を求めます。
+
+### [is_prime](d5/da2/namespacebcpl.html#af6d1ac2a68a6e6958d999935344e2b06)
+
+Determines whether a number is prime or not.
+
+素数かどうかの判定を行います。
+
+### [prime_factorize](d5/da2/namespacebcpl.html#a7acec159c4c16e9cd79216fedca94c48)
+
+Prime factorize.
+
+素因数分解をする関数。
+
+### [pollard](d5/da2/namespacebcpl.html#ab3f983aaf4888662f1d4b795d9862f5a)
+
+The function returns the smallest prime divisible of n.
+
+n を割り切れるの最小の素数を返関数。

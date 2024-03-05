@@ -6,4 +6,4 @@ services:
     hostname: "builder"
     volumes:
       - "../../:/bcpl"
-    command: /bin/bash -c "cd /bcpl/test/unittest && ./build_gtest.sh clang++ && make test"
+    command: /bin/bash -c "cd /bcpl/test/unittest && ./test_all.sh"

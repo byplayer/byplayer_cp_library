@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['順列組合せ_0',['permutation and combination(順列組合せ)',['../df/dc4/md_libraries.html#autotoc_md11',1,'']]]
+  ['最短経路探索_0',['Finding shortest path(最短経路探索)',['../df/dc4/md_libraries.html#autotoc_md9',1,'']]]
 ];

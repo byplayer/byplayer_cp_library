@@ -10,8 +10,8 @@ function make_test() {
 }
 
 make_test clang++ c++2b
-# make_test clang++ c++20
-# make_test clang++ c++17
-# make_test g++ c++23
-# make_test g++ c++20
-# make_test g++ c++17
+make_test clang++ c++20
+make_test clang++ c++17
+make_test g++ c++23
+make_test g++ c++20
+make_test g++ c++17

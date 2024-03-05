@@ -42,13 +42,20 @@ var NAVTREE =
           [ "foreach_combination", "df/dc4/md_libraries.html#autotoc_md13", null ],
           [ "foreach_combination", "df/dc4/md_libraries.html#autotoc_md14", null ]
         ] ]
+      ] ],
+      [ "math libraries(数学系ライブラリ)", "df/dc4/md_libraries.html#autotoc_md15", [
+        [ "pow_mod", "df/dc4/md_libraries.html#autotoc_md16", null ],
+        [ "is_prime", "df/dc4/md_libraries.html#autotoc_md17", null ],
+        [ "prime_factorize", "df/dc4/md_libraries.html#autotoc_md18", null ],
+        [ "pollard", "df/dc4/md_libraries.html#autotoc_md19", null ]
       ] ]
     ] ],
     [ "change log(変更履歴)", "d3/de2/md_changelog.html", [
-      [ "0.1.0 / 2024-02/27", "d3/de2/md_changelog.html#autotoc_md16", null ],
-      [ "0.0.３ / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md17", null ],
-      [ "0.0.2 / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md18", null ],
-      [ "0.0.1 / 2024-02-14", "d3/de2/md_changelog.html#autotoc_md19", null ]
+      [ "0.1.1 / 2024–02-28", "d3/de2/md_changelog.html#autotoc_md21", null ],
+      [ "0.1.0 / 2024-02-27", "d3/de2/md_changelog.html#autotoc_md22", null ],
+      [ "0.0.３ / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md23", null ],
+      [ "0.0.2 / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md24", null ],
+      [ "0.0.1 / 2024-02-14", "d3/de2/md_changelog.html#autotoc_md25", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
