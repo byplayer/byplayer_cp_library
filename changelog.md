@@ -1,6 +1,15 @@
 # change log(変更履歴)
 
-## 0.1.1 / 2024--02-28
+## 0.2.0 / 2024-03-05
+
+- add mathematic libraries as the follows
+- 可の数学関連ライブラリを追加
+  - [pow_mod](d5/da2/namespacebcpl.html#a58c3ca1e46633af7c7fb85a65b28fe62)
+  - [is_prime](d5/da2/namespacebcpl.html#af6d1ac2a68a6e6958d999935344e2b06)
+  - [prime_factorize](d5/da2/namespacebcpl.html#a7acec159c4c16e9cd79216fedca94c48)
+  - [pollard](d5/da2/namespacebcpl.html#ab3f983aaf4888662f1d4b795d9862f5a)
+
+## 0.1.1 / 2024-02-28
 
 - add google analytics tag for github page
 - github page に google analytics タグを追加
