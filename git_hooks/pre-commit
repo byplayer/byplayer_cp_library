@@ -3,15 +3,19 @@
 set -ue
 
 pushd $(git rev-parse --show-toplevel)
-if [ ! -d docs ]; then
-  make doc
-  git diff docs --exit-code --quiet
-  if [ $? -eq 0 ]; then
-    echo "There are unstaged documents."
-    echo "Please stage files under docs."
-    exit 1
-  fi
+make doc >/dev/null
+
+set +e
+git diff --exit-code --quiet docs
+DIFF_EC=$?
+set -e
+
+if [ ${DIFF_EC} -ne 0 ]; then
+  echo "There are unstaged documents."
+  echo "Please stage files under docs."
+  exit 1
 fi
+
 popd
 
 pushd test/unittest
