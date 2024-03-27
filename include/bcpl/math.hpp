@@ -1,5 +1,8 @@
 #ifndef BCPL_NUMERIC_HPP
 #define BCPL_NUMERIC_HPP 1
+/*
+ * bcpl: https://byplayer.github.io/byplayer_cp_library/
+ */
 
 #ifdef __clang__
 #pragma clang diagnostic push
