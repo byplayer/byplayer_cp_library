@@ -53,3 +53,9 @@ Prime factorize.
 The function returns the smallest prime divisible of n.
 
 n を割り切れるの最小の素数を返関数。
+
+# debug
+
+## [Debug output macro](da/d7b/debug_8hpp.html#a3597115824b294c3f7075beff73b29ac)
+
+The macro for debug out.

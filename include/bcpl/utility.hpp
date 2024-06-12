@@ -6,6 +6,7 @@
 
 #include <ostream>
 #include <utility>
+#include <vector>
 
 namespace bcpl {
 

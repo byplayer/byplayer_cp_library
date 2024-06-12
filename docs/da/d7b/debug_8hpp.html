@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>byplayer&#39;s competitive programming library: utility.hpp File Reference</title>
+<title>byplayer&#39;s competitive programming library: debug.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -82,7 +82,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('d1/d4e/utility_8hpp.html','../../'); initResizable(true); });
+$(function(){initNavTree('da/d7b/debug_8hpp.html','../../'); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -109,45 +109,67 @@ $(function(){initNavTree('d1/d4e/utility_8hpp.html','../../'); initResizable(tru
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">utility.hpp File Reference</div></div>
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">debug.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;ostream&gt;</code><br />
-<code>#include &lt;utility&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for utility.hpp:</div>
+Include dependency graph for debug.hpp:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d1/d48/utility_8hpp__incl.svg" width="236" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dac/debug_8hpp__incl.svg" width="92" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
-<p><a href="../../d1/d4e/utility_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="../../da/d7b/debug_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da2/namespacebcpl.html">bcpl</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ae837e23b2b92782aab5245fde42e3108" id="r_ae837e23b2b92782aab5245fde42e3108"><td class="memTemplParams" colspan="2">template&lt;typename T1 , typename T2 &gt; </td></tr>
-<tr class="memitem:ae837e23b2b92782aab5245fde42e3108"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d5/da2/namespacebcpl.html#ae837e23b2b92782aab5245fde42e3108">bcpl::operator&lt;&lt;</a> (std::ostream &amp;os, const std::pair&lt; T1, T2 &gt; &amp;p)</td></tr>
-<tr class="separator:ae837e23b2b92782aab5245fde42e3108"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83f16b4a677ee672a5f297a9e73fdffe" id="r_a83f16b4a677ee672a5f297a9e73fdffe"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a83f16b4a677ee672a5f297a9e73fdffe"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d5/da2/namespacebcpl.html#a83f16b4a677ee672a5f297a9e73fdffe">bcpl::operator&lt;&lt;</a> (std::ostream &amp;os, const std::vector&lt; T &gt; &amp;v)</td></tr>
-<tr class="separator:a83f16b4a677ee672a5f297a9e73fdffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2cb54986dc94bf36d92f4c295e8a7d1" id="r_ab2cb54986dc94bf36d92f4c295e8a7d1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab2cb54986dc94bf36d92f4c295e8a7d1"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d5/da2/namespacebcpl.html#ab2cb54986dc94bf36d92f4c295e8a7d1">bcpl::operator&lt;&lt;</a> (std::ostream &amp;os, const std::vector&lt; std::vector&lt; T &gt; &gt; &amp;vv)</td></tr>
-<tr class="separator:ab2cb54986dc94bf36d92f4c295e8a7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3597115824b294c3f7075beff73b29ac" id="r_a3597115824b294c3f7075beff73b29ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3597115824b294c3f7075beff73b29ac">DOUT</a>(...)&#160;&#160;&#160;  { ; }</td></tr>
+<tr class="memdesc:a3597115824b294c3f7075beff73b29ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for debug <br  />
+ デバッグ用マクロ  <br /></td></tr>
+<tr class="separator:a3597115824b294c3f7075beff73b29ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a3597115824b294c3f7075beff73b29ac" name="a3597115824b294c3f7075beff73b29ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3597115824b294c3f7075beff73b29ac">&#9670;&#160;</a></span>DOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOUT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td>&#160;&#160;&#160;  { ; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro for debug <br  />
+ デバッグ用マクロ </p>
+<p>If _DEBUG is defined, you can cout the value with parameters name. You can call this macro as the blow.</p>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> n = 3;</div>
+<div class="line">std::string s(<span class="stringliteral">&quot;str&quot;</span>);</div>
+<div class="line"><a class="code hl_define" href="#a3597115824b294c3f7075beff73b29ac" title="Macro for debug   デバッグ用マクロ">DOUT</a>(n, s);</div>
+</div><!-- fragment --><p>Then you can see the below output in your console.</p>
+<p>n, s:3, str</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>which you want to print </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00072">72</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_63178887d0e215f38099531042297c71.html">bcpl</a></li><li class="navelem"><a class="el" href="../../d1/d4e/utility_8hpp.html">utility.hpp</a></li>
+    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_63178887d0e215f38099531042297c71.html">bcpl</a></li><li class="navelem"><a class="el" href="../../da/d7b/debug_8hpp.html">debug.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
   </ul>
 </div>

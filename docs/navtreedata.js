@@ -48,15 +48,18 @@ var NAVTREE =
         [ "is_prime", "df/dc4/md_libraries.html#autotoc_md17", null ],
         [ "prime_factorize", "df/dc4/md_libraries.html#autotoc_md18", null ],
         [ "pollard", "df/dc4/md_libraries.html#autotoc_md19", null ]
+      ] ],
+      [ "debug", "df/dc4/md_libraries.html#autotoc_md20", [
+        [ "Debug output macro", "df/dc4/md_libraries.html#autotoc_md21", null ]
       ] ]
     ] ],
     [ "change log(変更履歴)", "d3/de2/md_changelog.html", [
-      [ "0.2.0 / 2024-03-05", "d3/de2/md_changelog.html#autotoc_md21", null ],
-      [ "0.1.1 / 2024-02-28", "d3/de2/md_changelog.html#autotoc_md22", null ],
-      [ "0.1.0 / 2024-02-27", "d3/de2/md_changelog.html#autotoc_md23", null ],
-      [ "0.0.３ / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md24", null ],
-      [ "0.0.2 / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md25", null ],
-      [ "0.0.1 / 2024-02-14", "d3/de2/md_changelog.html#autotoc_md26", null ]
+      [ "0.2.0 / 2024-03-05", "d3/de2/md_changelog.html#autotoc_md23", null ],
+      [ "0.1.1 / 2024-02-28", "d3/de2/md_changelog.html#autotoc_md24", null ],
+      [ "0.1.0 / 2024-02-27", "d3/de2/md_changelog.html#autotoc_md25", null ],
+      [ "0.0.３ / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md26", null ],
+      [ "0.0.2 / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md27", null ],
+      [ "0.0.1 / 2024-02-14", "d3/de2/md_changelog.html#autotoc_md28", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -77,7 +80,11 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
