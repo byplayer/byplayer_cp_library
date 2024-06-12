@@ -1,5 +1,8 @@
 #ifndef BCPL_COMBINATION_HPP
 #define BCPL_COMBINATION_HPP 1
+/*
+ * bcpl: https://byplayer.github.io/byplayer_cp_library/
+ */
 
 #include <algorithm>
 #include <iterator>

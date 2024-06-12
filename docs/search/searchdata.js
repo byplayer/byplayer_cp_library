@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "012abcdefghilmnoprstuvwyダ変数最組順３",
   1: "dn",
   2: "b",
-  3: "cdlmrt",
+  3: "cdlmrtu",
   4: "cfinop",
   5: "ct",
   6: "cdgluv",

@@ -1,5 +1,8 @@
 #ifndef BCPL_DIJKSTRA_HPP
 #define BCPL_DIJKSTRA_HPP 1
+/*
+ * bcpl: https://byplayer.github.io/byplayer_cp_library/
+ */
 
 #include <limits>
 #include <queue>

@@ -1,5 +1,7 @@
 [![cpp tests](https://github.com/byplayer/byplayer_cp_library/actions/workflows/ci-cpp.yml/badge.svg?branch=main)](https://github.com/byplayer/byplayer_cp_library/actions/workflows/ci-cpp.yml)
 [![CodeQL](https://github.com/byplayer/byplayer_cp_library/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/byplayer/byplayer_cp_library/actions/workflows/github-code-scanning/codeql)
+![GitHub Tag](https://img.shields.io/github/v/tag/byplayer/byplayer_cp_library)
+![GitHub License](https://img.shields.io/github/license/byplayer/byplayer_cp_library)
 
 # What is this library?
 

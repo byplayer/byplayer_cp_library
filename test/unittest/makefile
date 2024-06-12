@@ -36,7 +36,7 @@ endif
 ifeq ($(CXX), g++)
 CXXFLAGS = -std=$(CXX_VER) \
 			-Wall -Wextra \
-			-mtune=native -march=native \
+			-mtune=native \
 			-Wno-missing-braces -Wempty-body \
 			-Wno-error=deprecated-declarations \
 			-Wno-c++98-compat \
