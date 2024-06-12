@@ -12,6 +12,9 @@ var namespacebcpl =
     [ "foreach_combination", "d5/da2/namespacebcpl.html#a676f38aa58b7120f705c153a99564601", null ],
     [ "foreach_combination_all", "d5/da2/namespacebcpl.html#a3955c6a9122d5b6461cf2bcc7457a5c0", null ],
     [ "is_prime", "d5/da2/namespacebcpl.html#af6d1ac2a68a6e6958d999935344e2b06", null ],
+    [ "operator<<", "d5/da2/namespacebcpl.html#ae837e23b2b92782aab5245fde42e3108", null ],
+    [ "operator<<", "d5/da2/namespacebcpl.html#ab2cb54986dc94bf36d92f4c295e8a7d1", null ],
+    [ "operator<<", "d5/da2/namespacebcpl.html#a83f16b4a677ee672a5f297a9e73fdffe", null ],
     [ "pollard", "d5/da2/namespacebcpl.html#ad5701c5b505560e0a723ae77add60825", null ],
     [ "pow_mod", "d5/da2/namespacebcpl.html#a58c3ca1e46633af7c7fb85a65b28fe62", null ],
     [ "prime_factorize", "d5/da2/namespacebcpl.html#afb5340978e49756eb1f959b86f5252bd", null ]
