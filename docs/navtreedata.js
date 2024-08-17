@@ -54,12 +54,13 @@ var NAVTREE =
       ] ]
     ] ],
     [ "change log(変更履歴)", "d3/de2/md_changelog.html", [
-      [ "0.2.0 / 2024-03-05", "d3/de2/md_changelog.html#autotoc_md23", null ],
-      [ "0.1.1 / 2024-02-28", "d3/de2/md_changelog.html#autotoc_md24", null ],
-      [ "0.1.0 / 2024-02-27", "d3/de2/md_changelog.html#autotoc_md25", null ],
-      [ "0.0.３ / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md26", null ],
-      [ "0.0.2 / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md27", null ],
-      [ "0.0.1 / 2024-02-14", "d3/de2/md_changelog.html#autotoc_md28", null ]
+      [ "0.3.0 / 2024-08-17", "d3/de2/md_changelog.html#autotoc_md23", null ],
+      [ "0.2.0 / 2024-03-05", "d3/de2/md_changelog.html#autotoc_md24", null ],
+      [ "0.1.1 / 2024-02-28", "d3/de2/md_changelog.html#autotoc_md25", null ],
+      [ "0.1.0 / 2024-02-27", "d3/de2/md_changelog.html#autotoc_md26", null ],
+      [ "0.0.３ / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md27", null ],
+      [ "0.0.2 / 2024-02-15", "d3/de2/md_changelog.html#autotoc_md28", null ],
+      [ "0.0.1 / 2024-02-14", "d3/de2/md_changelog.html#autotoc_md29", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

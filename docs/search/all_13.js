@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['this_20library_0',['this library',['../index.html#autotoc_md2',1,'How to use this library?'],['../index.html#autotoc_md0',1,'What is this library?']]],
-  ['to_1',['to',['../de/d1f/structbcpl_1_1dijkstra_1_1_node.html#ac92f3804e9eb8e430fbe242023b3d390',1,'bcpl::dijkstra::Node']]],
-  ['to_20use_20this_20library_2',['How to use this library?',['../index.html#autotoc_md2',1,'']]],
-  ['types_2ehpp_3',['types.hpp',['../dd/de3/types_8hpp.html',1,'']]]
+  ['s_20competitive_20programming_20library_0',['byplayer&apos;s competitive programming library',['../index.html',1,'']]],
+  ['shortest_20path_20最短経路探索_1',['Finding shortest path(最短経路探索)',['../df/dc4/md_libraries.html#autotoc_md9',1,'']]],
+  ['structbcpl_5f1_5f1dijkstra_20html_20dijkstra_20method_20ダイクストラ法_20a_2',['&lt;a href=&quot;dc/d3b/structbcpl_1_1dijkstra.html&quot; &gt;Dijkstra method(ダイクストラ法)&lt;/a&gt;',['../df/dc4/md_libraries.html#autotoc_md10',1,'']]],
+  ['submitting_3',['expand libraries into your code before submitting',['../index.html#autotoc_md3',1,'']]]
 ];
