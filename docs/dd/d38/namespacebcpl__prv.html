@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>byplayer&#39;s competitive programming library: debug.hpp File Reference</title>
+<title>byplayer&#39;s competitive programming library: bcpl_prv Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -82,7 +82,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('da/d7b/debug_8hpp.html','../../'); initResizable(true); });
+$(function(){initNavTree('dd/d38/namespacebcpl__prv.html','../../'); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -109,59 +109,90 @@ $(function(){initNavTree('da/d7b/debug_8hpp.html','../../'); initResizable(true)
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">debug.hpp File Reference</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">bcpl_prv Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for debug.hpp:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../dc/dac/debug_8hpp__incl.svg" width="92" height="111"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-<p><a href="../../da/d7b/debug_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a3597115824b294c3f7075beff73b29ac" id="r_a3597115824b294c3f7075beff73b29ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3597115824b294c3f7075beff73b29ac">DOUT</a>(...)</td></tr>
-<tr class="memdesc:a3597115824b294c3f7075beff73b29ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for debug <br  />
- デバッグ用マクロ  <br /></td></tr>
-<tr class="separator:a3597115824b294c3f7075beff73b29ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a845ff8efd1166293074998e319d11d13" id="r_a845ff8efd1166293074998e319d11d13"><td class="memTemplParams" colspan="2">template&lt;typename T , typename F &gt; </td></tr>
+<tr class="memitem:a845ff8efd1166293074998e319d11d13"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a845ff8efd1166293074998e319d11d13">dfs_combination</a> (T &amp;arr, size_t idx, size_t r, T &amp;pattern, F &amp;&amp;callback)</td></tr>
+<tr class="memdesc:a845ff8efd1166293074998e319d11d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is combination helper function. Don't call this directory. <br  />
+コンビネーション処理ヘルパ関数。直接呼び出さないこと。  <br /></td></tr>
+<tr class="separator:a845ff8efd1166293074998e319d11d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a3597115824b294c3f7075beff73b29ac" name="a3597115824b294c3f7075beff73b29ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3597115824b294c3f7075beff73b29ac">&#9670;&#160;</a></span>DOUT</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a845ff8efd1166293074998e319d11d13" name="a845ff8efd1166293074998e319d11d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a845ff8efd1166293074998e319d11d13">&#9670;&#160;</a></span>dfs_combination()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename F &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">#define DOUT</td>
+          <td class="memname">bool bcpl_prv::dfs_combination </td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>arr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>idx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  { ; }</div>
-</div><!-- fragment -->
-<p>Macro for debug <br  />
- デバッグ用マクロ </p>
-<p>If _DEBUG is defined, you can cout the value with parameters name. You can call this macro as the blow.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> n = 3;</div>
-<div class="line">std::string s(<span class="stringliteral">&quot;str&quot;</span>);</div>
-<div class="line"><a class="code hl_define" href="#a3597115824b294c3f7075beff73b29ac" title="Macro for debug   デバッグ用マクロ">DOUT</a>(n, s);</div>
-</div><!-- fragment --><p>Then you can see the below output in your console.</p>
-<p>n, s:3, str</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>which you want to print </td></tr>
+
+<p>This is combination helper function. Don't call this directory. <br  />
+コンビネーション処理ヘルパ関数。直接呼び出さないこと。 </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>array type </td></tr>
+    <tr><td class="paramname">F</td><td>callback function type </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>original array </td></tr>
+    <tr><td class="paramname">idx</td><td>start index </td></tr>
+    <tr><td class="paramname">r</td><td>remaining combination count </td></tr>
+    <tr><td class="paramname">pattern</td><td>combination result array </td></tr>
+    <tr><td class="paramname">callback</td><td>callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if call back return true or reach end. </dd>
+<dd>
+false if call back function return false. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00072">72</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d00/combination_8hpp_source.html#l00028">28</a> of file <a class="el" href="../../df/d00/combination_8hpp_source.html">combination.hpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d38/namespacebcpl__prv_a845ff8efd1166293074998e319d11d13_cgraph.svg" width="184" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../dd/d38/namespacebcpl__prv_a845ff8efd1166293074998e319d11d13_icgraph.svg" width="406" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -170,7 +201,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="../../dir_63178887d0e215f38099531042297c71.html">bcpl</a></li><li class="navelem"><a class="el" href="../../da/d7b/debug_8hpp.html">debug.hpp</a></li>
+    <li class="navelem"><a class="el" href="../../dd/d38/namespacebcpl__prv.html">bcpl_prv</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
