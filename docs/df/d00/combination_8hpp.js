@@ -1,5 +1,5 @@
 var combination_8hpp =
 [
-    [ "foreach_combination", "df/d00/combination_8hpp.html#a676f38aa58b7120f705c153a99564601", null ],
-    [ "foreach_combination_all", "df/d00/combination_8hpp.html#a3955c6a9122d5b6461cf2bcc7457a5c0", null ]
+    [ "dfs_combination", "df/d00/combination_8hpp.html#a845ff8efd1166293074998e319d11d13", null ],
+    [ "foreach_combination", "df/d00/combination_8hpp.html#a30d32666413ae2d69a9a9a32c751a48d", null ]
 ];

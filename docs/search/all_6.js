@@ -20,12 +20,13 @@ var searchData=
   ['debug_20output_20macro_20a_17',['&lt;a href=&quot;da/d7b/debug_8hpp.html#a3597115824b294c3f7075beff73b29ac&quot; &gt;Debug output macro&lt;/a&gt;',['../df/dc4/md_libraries.html#autotoc_md21',1,'']]],
   ['debug_2ehpp_18',['debug.hpp',['../da/d7b/debug_8hpp.html',1,'']]],
   ['debug_5f8hpp_20html_20a3597115824b294c3f7075beff73b29ac_20debug_20output_20macro_20a_19',['&lt;a href=&quot;da/d7b/debug_8hpp.html#a3597115824b294c3f7075beff73b29ac&quot; &gt;Debug output macro&lt;/a&gt;',['../df/dc4/md_libraries.html#autotoc_md21',1,'']]],
-  ['dijkstra_20',['dijkstra',['../dc/d3b/structbcpl_1_1dijkstra.html',1,'bcpl']]],
-  ['dijkstra_20method_20ダイクストラ法_20a_21',['&lt;a href=&quot;dc/d3b/structbcpl_1_1dijkstra.html&quot; &gt;Dijkstra method(ダイクストラ法)&lt;/a&gt;',['../df/dc4/md_libraries.html#autotoc_md10',1,'']]],
-  ['dijkstra_2ehpp_22',['dijkstra.hpp',['../d3/d11/dijkstra_8hpp.html',1,'']]],
-  ['distancepair_23',['DistancePair',['../dc/d3b/structbcpl_1_1dijkstra.html#adb8b3ed9be57ed3d1e52f3f85b77f3eb',1,'bcpl::dijkstra']]],
-  ['distancepairvector_24',['DistancePairVector',['../dc/d3b/structbcpl_1_1dijkstra.html#a746649c23fa47579fd5f4897c2cb583c',1,'bcpl::dijkstra']]],
-  ['distancetype_25',['DistanceType',['../dc/d3b/structbcpl_1_1dijkstra.html#a61bd727f993e7794e29227e253e25c0c',1,'bcpl::dijkstra']]],
-  ['distancevector_26',['DistanceVector',['../dc/d3b/structbcpl_1_1dijkstra.html#af1b58936a35f5a060f3a9bb705afa434',1,'bcpl::dijkstra']]],
-  ['dout_27',['DOUT',['../da/d7b/debug_8hpp.html#a3597115824b294c3f7075beff73b29ac',1,'debug.hpp']]]
+  ['dfs_5fcombination_20',['dfs_combination',['../dd/d38/namespacebcpl__prv.html#a845ff8efd1166293074998e319d11d13',1,'bcpl_prv']]],
+  ['dijkstra_21',['dijkstra',['../dc/d3b/structbcpl_1_1dijkstra.html',1,'bcpl']]],
+  ['dijkstra_20method_20ダイクストラ法_20a_22',['&lt;a href=&quot;dc/d3b/structbcpl_1_1dijkstra.html&quot; &gt;Dijkstra method(ダイクストラ法)&lt;/a&gt;',['../df/dc4/md_libraries.html#autotoc_md10',1,'']]],
+  ['dijkstra_2ehpp_23',['dijkstra.hpp',['../d3/d11/dijkstra_8hpp.html',1,'']]],
+  ['distancepair_24',['DistancePair',['../dc/d3b/structbcpl_1_1dijkstra.html#adb8b3ed9be57ed3d1e52f3f85b77f3eb',1,'bcpl::dijkstra']]],
+  ['distancepairvector_25',['DistancePairVector',['../dc/d3b/structbcpl_1_1dijkstra.html#a746649c23fa47579fd5f4897c2cb583c',1,'bcpl::dijkstra']]],
+  ['distancetype_26',['DistanceType',['../dc/d3b/structbcpl_1_1dijkstra.html#a61bd727f993e7794e29227e253e25c0c',1,'bcpl::dijkstra']]],
+  ['distancevector_27',['DistanceVector',['../dc/d3b/structbcpl_1_1dijkstra.html#af1b58936a35f5a060f3a9bb705afa434',1,'bcpl::dijkstra']]],
+  ['dout_28',['DOUT',['../da/d7b/debug_8hpp.html#a3597115824b294c3f7075beff73b29ac',1,'debug.hpp']]]
 ];

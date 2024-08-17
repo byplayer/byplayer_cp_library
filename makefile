@@ -1,3 +1,5 @@
+all: test
+
 .PHONY: clean doc test
 clean:
 	$(RM) -r docs
