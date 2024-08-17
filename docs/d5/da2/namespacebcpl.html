@@ -353,8 +353,8 @@ template&lt;typename T , typename F &gt; </div>
   </table>
   </dd>
 </dl>
-<p>Reorder argument v to list all combination. The first k elements are target elements. If there are elements with the same value, they are regarded as the same combination and are not listed. If you list all combination even if container includes equals elements, please call <a class="el" href="">foreach_combination_all</a> function. The callback function is called each combination. If you return <b>true</b> in the callback function, continue listing combination. If you return <b>false</b> in the callback function, abort listing combination.</p>
-<p>全組合せを列挙するために、引数 v の 要素を並び替えていく。先頭 k 個が組合せ の要素となっています。同値の要素がある場合は、同じ組合せとみなし列挙はしません。 重複要素があってもすべての組合せを列挙したい場合は、 <a class="el" href="">foreach_combination_all</a> 関数を呼び出してください。 コールバック関数がそれぞれの組合せ毎に呼び出されます。もし、コールバック関数から <b>true</b> が返った場合は、列挙を続けます。もし、コールバック関数から <b>false</b> が返った場合は、列挙を中断します。</p>
+<p>This function list all combination of v. The callback function is called for each combination list. Even if there are elements with the same value, this function call callback for all combination. The callback function is called each combination. If you return <b>true</b> in the callback function, continue listing combination. If you return <b>false</b> in the callback function, abort listing combination.</p>
+<p>全組合せを列挙し、各組み合わせ毎にコールバック関数を呼び出します。 もし、コールバック関数から <b>true</b> が返った場合は、列挙を続けます。もし、コールバック関数から <b>false</b> が返った場合は、列挙を中断します。</p>
 <p>example: normal case </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;bcpl/combination&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cassert&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
@@ -429,7 +429,7 @@ template&lt;typename T , typename F &gt; </div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="../../df/d00/combination_8hpp_source.html#l00177">177</a> of file <a class="el" href="../../df/d00/combination_8hpp_source.html">combination.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d00/combination_8hpp_source.html#l00172">172</a> of file <a class="el" href="../../df/d00/combination_8hpp_source.html">combination.hpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

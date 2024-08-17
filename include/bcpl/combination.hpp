@@ -71,21 +71,16 @@ namespace bcpl {
  *                 コールバック関数。以下の型を期待しています。
  *                 bool func(const T &v)
  *
- * Reorder argument v to list all combination. The first k elements
- * are target elements. If there are elements with the same value, they are
- * regarded as the same combination and are not listed. If you list all
- * combination even if container includes equals elements, please call @link
- * foreach_combination_all @endlink function.
+ * This function list all combination of v. The callback function is called
+ * for each combination list. Even if there are elements with the same value,
+ * this function call callback for all combination.
  * The callback function is called each combination. If you return @b true in
  * the callback function, continue listing combination. If you return @b false
  * in the callback function, abort listing combination.
  *
- * 全組合せを列挙するために、引数 v の 要素を並び替えていく。先頭 k 個が組合せ
- * の要素となっています。同値の要素がある場合は、同じ組合せとみなし列挙はしません。
- * 重複要素があってもすべての組合せを列挙したい場合は、 @link
- * foreach_combination_all @endlink 関数を呼び出してください。
- * コールバック関数がそれぞれの組合せ毎に呼び出されます。もし、コールバック関数から
- * @b true が返った場合は、列挙を続けます。もし、コールバック関数から @b false
+ * 全組合せを列挙し、各組み合わせ毎にコールバック関数を呼び出します。
+ *もし、コールバック関数から @b true
+ *が返った場合は、列挙を続けます。もし、コールバック関数から @b false
  * が返った場合は、列挙を中断します。
  *
  * example: normal case
