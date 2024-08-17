@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['順列組合せ_0',['permutation and combination(順列組合せ)',['../df/dc4/md_libraries.html#autotoc_md11',1,'']]]
+  ['組合せ_0',['combination(組合せ)',['../df/dc4/md_libraries.html#autotoc_md12',1,'']]]
 ];
