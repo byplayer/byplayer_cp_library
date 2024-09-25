@@ -2,5 +2,6 @@
   "files.associations": {
     "*.erb": "erb",
     "vector": "cpp"
-  }
+  },
+  "makefile.configureOnOpen": true
 }
