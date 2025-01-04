@@ -4,6 +4,10 @@
 
 ### [Dijkstra method(ダイクストラ法)](dc/d3b/structbcpl_1_1dijkstra.html)
 
+```cpp
+#include "bcpl/dijkstra"
+```
+
 Solve the scoring path for a path with a single starting point and non-negative weights on the edges.
 
 単一始点で辺に非負の重みがある経路の採点経路を解く。
@@ -15,6 +19,10 @@ There are permutation and combination libraries.
 順列と組合せのライブラリ。
 
 ### combination(組合せ)
+
+```cpp
+#include "bcpl/combination"
+```
 
 #### [foreach_combination](d5/da2/namespacebcpl.html#a676f38aa58b7120f705c153a99564601)
 
@@ -30,9 +38,13 @@ List all the combinations even if the container includes equal elements.
 
 ## math libraries(数学系ライブラリ)
 
+```cpp
+#include "bcpl/math"
+```
+
 ### [pow_mod](d5/da2/namespacebcpl.html#a58c3ca1e46633af7c7fb85a65b28fe62)
 
-calculate a \*\* n mod m @n.
+calculate a \*\* n mod m.
 
 a の n 乗 mod m を求めます。
 
@@ -45,8 +57,10 @@ Determines whether a number is prime or not.
 ### [prime_factorize](d5/da2/namespacebcpl.html#a7acec159c4c16e9cd79216fedca94c48)
 
 Prime factorize.
+The `vector<long long>` which includes prime factorized numbers will be returned from this function.
 
 素因数分解をする関数。
+素因数分解をした要素を `vector<long long>` で返します。
 
 ### [pollard](d5/da2/namespacebcpl.html#ab3f983aaf4888662f1d4b795d9862f5a)
 
