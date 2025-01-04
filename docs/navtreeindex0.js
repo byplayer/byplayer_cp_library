@@ -18,6 +18,7 @@ var NAVTREEINDEX0 =
 "d3/de2/md_changelog.html#autotoc_md27":[9,4],
 "d3/de2/md_changelog.html#autotoc_md28":[9,5],
 "d3/de2/md_changelog.html#autotoc_md29":[9,6],
+"d3/de2/md_changelog.html#autotoc_md30":[9,7],
 "d4/d78/math_8hpp.html":[12,0,0,0,3],
 "d4/d78/math_8hpp_source.html":[12,0,0,0,3],
 "d5/da2/namespacebcpl.html":[10,0,0],

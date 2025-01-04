@@ -1,5 +1,9 @@
 # change log(変更履歴)
 
+## 0.4.0 / 2024-09-26
+
+- support origname option at expander.py
+
 ## 0.3.0 / 2024-08-17
 
 - fix combination library bug
