@@ -6,7 +6,7 @@ pushd $(git rev-parse --show-toplevel)
 make doc >/dev/null
 
 set +e
-git diff --exit-code --quiet docs
+git diff --exit-code --quiet -- docs
 DIFF_EC=$?
 set -e
 
