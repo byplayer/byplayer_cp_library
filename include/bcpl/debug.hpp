@@ -23,8 +23,6 @@
  * Then you can see the below output in your console.
  *
  * n, s:3, str
- *
- * @param args which you want to print
  */
 #define DOUT(...)                                                              \
   do {                                                                         \
@@ -66,11 +64,11 @@ template <class H, class... Ts> void debug_out(H &&h, Ts &&...ts) {
  * Then you can see the below output in your console.
  *
  * n, s:3, str
- *
- * @param args which you want to print
  */
 #define DOUT(...)                                                              \
-  { ; }
+  {                                                                            \
+    ;                                                                          \
+  }
 #endif // _DEBUG
 
 #endif // BCPL_DEBUG_HPP
