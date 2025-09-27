@@ -134,9 +134,3 @@ gtest_discover_tests(unittest
     DISCOVERY_MODE PRE_TEST
 )
 
-add_custom_target(run_unittest
-    COMMAND unittest
-    DEPENDS unittest
-    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "Running unit tests"
-)
