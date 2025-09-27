@@ -1,13 +1,30 @@
 cmake_minimum_required(VERSION 3.14)
 project(unittest)
 
-include(FetchContent)
-
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+# Set compiler flags before including any external projects
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND APPLE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++")
+    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libc++")
+    set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -stdlib=libc++")
+
+    # Force these flags for all targets including FetchContent
+    add_compile_options(-stdlib=libc++)
+    add_link_options(-stdlib=libc++)
+endif()
+
+include(FetchContent)
+
+# Set GoogleTest to be built as a static library with position independent code
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+
     # Basic warnings (always available)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpointer-arith -Wcast-qual")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-missing-braces -Wempty-body")
@@ -91,6 +108,26 @@ target_link_libraries(unittest
     gtest_main
     gmock
 )
+
+# Explicitly link libc++ for Homebrew LLVM on macOS
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND APPLE)
+    target_link_libraries(unittest c++ c++abi)
+
+    # If using Homebrew LLVM, dynamically detect and add the library path
+    if(CMAKE_CXX_COMPILER MATCHES "/opt/homebrew" OR CMAKE_CXX_COMPILER MATCHES "/usr/local")
+        # Detect Homebrew LLVM path dynamically
+        execute_process(
+            COMMAND brew --prefix llvm
+            OUTPUT_VARIABLE BREW_LLVM_PREFIX
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+            ERROR_QUIET
+        )
+        if(BREW_LLVM_PREFIX)
+            target_link_directories(unittest PRIVATE ${BREW_LLVM_PREFIX}/lib/c++)
+            message(STATUS "Using Homebrew LLVM from: ${BREW_LLVM_PREFIX}")
+        endif()
+    endif()
+endif()
 
 include(GoogleTest)
 gtest_discover_tests(unittest
