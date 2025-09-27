@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(byplayer_cp_library VERSION 1.0.0 LANGUAGES CXX)
+project(byplayer_cp_library VERSION 0.5.0 LANGUAGES CXX)
 
 # Set default C++ standard if not specified
 if(NOT CMAKE_CXX_STANDARD)
