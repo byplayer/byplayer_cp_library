@@ -5,8 +5,8 @@ on:
     branches: ["**"]
 jobs:
   cpp-ci:
-    runs-on: ubuntu-latest
-    container: byplayer/cxx-build:v202509.01
+    runs-on:
+      container: byplayer/cxx-build:v202509.01
     strategy:
       matrix:
         cxx: ["clang++", "g++"]
@@ -15,9 +15,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+
       - name: check version
         run: ${{matrix.cxx}} --version
-      - name: "build and run unit tests"
+
+      - name: Configure with CMake
         run: |
-          cd test/unittest
-          make CXX=${{matrix.cxx}} CXX_VER=${{matrix.cxx_ver}} test
+          cmake -S . -B build-${{matrix.cxx}}-${{matrix.cxx_ver}} \
+            -DCMAKE_CXX_COMPILER=${{matrix.cxx}} \
+            -DCMAKE_CXX_STANDARD=${{matrix.cxx_ver}} \
+            -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build and run unit tests
+        run: cmake --build build-${{matrix.cxx}}-${{matrix.cxx_ver}} --target run_tests

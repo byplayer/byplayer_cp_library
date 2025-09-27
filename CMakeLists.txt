@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.14)
 project(byplayer_cp_library VERSION 1.0.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 23)
+# Set default C++ standard if not specified
+if(NOT CMAKE_CXX_STANDARD)
+    set(CMAKE_CXX_STANDARD 23)
+endif()
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -28,6 +31,7 @@ if(BUILD_DOC)
 endif()
 
 if(BUILD_TESTS)
+    include(CTest)
     enable_testing()
     add_subdirectory(test/unittest)
 endif()

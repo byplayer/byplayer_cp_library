@@ -1,0 +1,206 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 14,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "description": "Default build configuration",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BUILD_TESTS": "ON"
+      }
+    },
+    {
+      "name": "clang-23-release",
+      "description": "Clang C++23 Release build",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-clang23",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_CXX_STANDARD": "23",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "clang-20-release",
+      "description": "Clang C++20 Release build",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-clang20",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_CXX_STANDARD": "20",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "clang-17-release",
+      "description": "Clang C++17 Release build",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-clang17",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "gcc-23-release",
+      "description": "GCC C++23 Release build",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-gcc23",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "g++",
+        "CMAKE_CXX_STANDARD": "23",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "gcc-20-release",
+      "description": "GCC C++20 Release build",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-gcc20",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "g++",
+        "CMAKE_CXX_STANDARD": "20",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "gcc-17-release",
+      "description": "GCC C++17 Release build",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-gcc17",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "g++",
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "debug",
+      "description": "Debug build with default compiler",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "clang-debug",
+      "description": "Clang Debug build",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/build-clang-debug",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "gcc-debug",
+      "description": "GCC Debug build",
+      "inherits": "debug",
+      "binaryDir": "${sourceDir}/build-gcc-debug",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "docs",
+      "description": "Build with documentation generation",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-docs",
+      "cacheVariables": {
+        "BUILD_DOC": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default",
+      "jobs": 4,
+      "targets": ["run_tests"]
+    },
+    {
+      "name": "clang-23",
+      "configurePreset": "clang-23-release",
+      "jobs": 4,
+      "targets": ["run_tests"]
+    },
+    {
+      "name": "clang-20",
+      "configurePreset": "clang-20-release",
+      "jobs": 4,
+      "targets": ["run_tests"]
+    },
+    {
+      "name": "clang-17",
+      "configurePreset": "clang-17-release",
+      "jobs": 4,
+      "targets": ["run_tests"]
+    },
+    {
+      "name": "gcc-23",
+      "configurePreset": "gcc-23-release",
+      "jobs": 4,
+      "targets": ["run_tests"]
+    },
+    {
+      "name": "gcc-20",
+      "configurePreset": "gcc-20-release",
+      "jobs": 4,
+      "targets": ["run_tests"]
+    },
+    {
+      "name": "gcc-17",
+      "configurePreset": "gcc-17-release",
+      "jobs": 4,
+      "targets": ["run_tests"]
+    },
+    {
+      "name": "debug",
+      "configurePreset": "debug",
+      "jobs": 4
+    },
+    {
+      "name": "docs",
+      "configurePreset": "docs",
+      "targets": ["doc"]
+    },
+    {
+      "name": "all-tests",
+      "description": "Run tests with all configurations",
+      "configurePreset": "default",
+      "jobs": 4,
+      "targets": ["run_tests"]
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "clang-23",
+      "configurePreset": "clang-23-release",
+      "output": {
+        "outputOnFailure": true
+      }
+    },
+    {
+      "name": "gcc-23",
+      "configurePreset": "gcc-23-release",
+      "output": {
+        "outputOnFailure": true
+      }
+    }
+  ]
+}

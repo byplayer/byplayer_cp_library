@@ -8,22 +8,51 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Weverything -Wall -Wextra -Wpointer-arith -Wcast-qual")
+    # Basic warnings (always available)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpointer-arith -Wcast-qual")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-missing-braces -Wempty-body")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++98-compat -Wno-c++98-compat-pedantic")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic-errors -pedantic")
+
+    # Version-specific flags
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "5.0")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Weverything")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++98-compat -Wno-c++98-compat-pedantic")
+    endif()
+
+    # Performance tuning
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mtune=native -march=native")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconstexpr-depth=2147483647 -fconstexpr-steps=214748364")
+
+    # Constexpr limits
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "5.0")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconstexpr-depth=2147483647")
+        if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "8.0")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconstexpr-steps=214748364")
+        endif()
+    endif()
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    # Basic warnings (always available)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mtune=native")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-missing-braces -Wempty-body")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-error=deprecated-declarations")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++98-compat -Wno-c++98-compat-pedantic")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic-errors -pedantic")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconstexpr-depth=2147483647")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647")
+
+    # Version-specific flags
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "5.0")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-c++98-compat -Wno-c++98-compat-pedantic")
+    endif()
+
+    # Constexpr limits
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "5.0")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconstexpr-depth=2147483647")
+    endif()
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "8.0")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconstexpr-loop-limit=2147483647")
+    endif()
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL "9.0")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fconstexpr-ops-limit=2147483647")
+    endif()
 endif()
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -64,7 +93,9 @@ target_link_libraries(unittest
 )
 
 include(GoogleTest)
-gtest_discover_tests(unittest)
+gtest_discover_tests(unittest
+    DISCOVERY_MODE PRE_TEST
+)
 
 add_custom_target(run_unittest
     COMMAND unittest
