@@ -1,5 +1,18 @@
 # change log(変更履歴)
 
+## 0.5.0 / 2024-09-27
+
+- Migrate build system from Makefile to CMake
+- ビルドシステムをMakefileからCMakeに移行
+- Add support for multiple compilers (clang++, g++) and C++ standards (C++17/20/23)
+- 複数のコンパイラ（clang++、g++）とC++標準（C++17/20/23）のサポートを追加
+- Improve dependency management with automatic GoogleTest fetching
+- GoogleTestの自動取得による依存関係管理の改善
+- Add CMakePresets.json for convenient build configurations
+- 便利なビルド設定のためのCMakePresets.jsonを追加
+- Update CI/CD pipeline to use CMake
+- CI/CDパイプラインをCMake使用に更新
+
 ## 0.4.0 / 2024-09-26
 
 - support origname option at expander.py
