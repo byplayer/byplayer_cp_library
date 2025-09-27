@@ -5,6 +5,15 @@ set -eu
 # Fix Git ownership issue in Docker (ignore errors if not in git repo)
 git config --global --add safe.directory '*' 2>/dev/null || true
 
+# Check for cleanup option
+if [ "${1:-}" = "--clean" ]; then
+    echo "Cleaning up build directories..."
+    cd /bcpl
+    rm -rf build-*
+    echo "Build directories removed."
+    exit 0
+fi
+
 function make_test() {
     CXX=$1
     CXX_VER=$2
@@ -14,14 +23,20 @@ function make_test() {
     cd /bcpl
 
     # Configure and build with CMake
-    cmake -S . -B build-${CXX}-${CXX_VER} \
+    if ! cmake -S . -B build-${CXX}-${CXX_VER} \
           -DCMAKE_CXX_COMPILER=${CXX} \
           -DCMAKE_CXX_STANDARD=${CXX_VER#c++} \
           -DCMAKE_BUILD_TYPE=Release \
           -DFETCHCONTENT_FULLY_DISCONNECTED=OFF \
-          -DFETCHCONTENT_UPDATES_DISCONNECTED=OFF
+          -DFETCHCONTENT_UPDATES_DISCONNECTED=OFF; then
+        echo "ERROR: CMake configuration failed for ${CXX} with C++${CXX_VER}"
+        return 1
+    fi
 
-    cmake --build build-${CXX}-${CXX_VER} -j --target run_tests
+    if ! cmake --build build-${CXX}-${CXX_VER} -j --target run_tests; then
+        echo "ERROR: Build or tests failed for ${CXX} with C++${CXX_VER}"
+        return 1
+    fi
 
     echo "Completed testing with ${CXX} C++${CXX_VER}"
     echo "----------------------------------------"

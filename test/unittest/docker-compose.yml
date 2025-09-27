@@ -1,6 +1,6 @@
 services:
   build:
-    image: "byplayer/cxx-build:test"
+    image: "byplayer/cxx-build:v202509.01"
     container_name: "builder"
     hostname: "builder"
     volumes:

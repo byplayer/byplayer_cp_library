@@ -33,6 +33,9 @@ else()
     add_definitions(-DNDEBUG)
 endif()
 
+# Cache GoogleTest for faster rebuilds
+set(FETCHCONTENT_UPDATES_DISCONNECTED ON CACHE BOOL "Disconnect FetchContent updates after initial download")
+
 FetchContent_Declare(
     googletest
     GIT_REPOSITORY https://github.com/google/googletest.git
@@ -40,6 +43,7 @@ FetchContent_Declare(
     GIT_CONFIG      "advice.detachedHead=false"
 )
 
+# Set to OFF to show download progress (useful for CI/CD visibility)
 set(FETCHCONTENT_QUIET OFF)
 FetchContent_MakeAvailable(googletest)
 

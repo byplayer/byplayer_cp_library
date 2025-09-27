@@ -38,3 +38,6 @@ add_custom_target(run_tests
     COMMENT "Running tests"
     DEPENDS unittest
 )
+
+# Export compile commands for better IDE support
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
