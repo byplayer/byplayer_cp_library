@@ -131,6 +131,6 @@ endif()
 
 include(GoogleTest)
 gtest_discover_tests(unittest
-    DISCOVERY_MODE PRE_TEST
+    DISCOVERY_MODE POST_BUILD
 )
 
