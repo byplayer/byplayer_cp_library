@@ -34,14 +34,13 @@ if(BUILD_TESTS)
     include(CTest)
     enable_testing()
     add_subdirectory(test/unittest)
+
+    add_custom_target(run_tests
+        COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        COMMENT "Running tests"
+        DEPENDS unittest
+    )
 endif()
-
-add_custom_target(run_tests
-    COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure
-    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "Running tests"
-    DEPENDS unittest
-)
-
 # Export compile commands for better IDE support
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
