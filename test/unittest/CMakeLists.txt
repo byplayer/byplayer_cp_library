@@ -93,16 +93,16 @@ FetchContent_Declare(
 set(FETCHCONTENT_QUIET OFF)
 FetchContent_MakeAvailable(googletest)
 
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/ac-library
-    ${CMAKE_SOURCE_DIR}/include
-)
 
 file(GLOB TEST_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 
 add_executable(unittest ${TEST_SOURCES})
 
+target_include_directories(unittest PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/ac-library
+    ${CMAKE_SOURCE_DIR}/include
+)
 target_link_libraries(unittest
     gtest
     gtest_main
