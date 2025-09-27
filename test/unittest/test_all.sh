@@ -38,7 +38,8 @@ function make_test() {
     if ! cmake -S "$PROJECT_ROOT" -B "build-${CXX}-${CXX_VER}" \
           -DCMAKE_CXX_COMPILER=${CXX} \
           -DCMAKE_CXX_STANDARD=${CXX_VER} \
-          -DCMAKE_BUILD_TYPE=Release ; then
+          -DCMAKE_BUILD_TYPE=Release ;
+    then
         echo "ERROR: CMake configuration failed for ${CXX} with C++${CXX_VER}"
         FAILED_TESTS="${FAILED_TESTS}\n  - ${CXX} with C++${CXX_VER}: CMake configuration failed"
         FAILED_COUNT=$((FAILED_COUNT + 1))
