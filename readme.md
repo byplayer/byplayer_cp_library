@@ -37,6 +37,88 @@ libraries in your source code as follows.
 #include <bcpl/dijkstra>
 ```
 
+# Build and Test
+
+This project uses CMake for building. Run the following commands from the root directory:
+
+このプロジェクトは CMake を使用してビルドします。ルートディレクトリで以下のコマンドを実行してください：
+
+```bash
+# Configure and build with tests
+# テスト付きでビルドして実行
+cmake -S . -B build
+cmake --build build -j --target run_tests
+```
+
+## Build Options / ビルドオプション
+
+- `-DCMAKE_BUILD_TYPE=Debug` : Build in debug mode / デバッグモードでビルド
+- `-DCMAKE_BUILD_TYPE=Release` : Build in release mode (default) / リリースモードでビルド（デフォルト）
+- `-DBUILD_TESTS=OFF` : Disable building tests / テストのビルドを無効化
+- `-DBUILD_DOC=ON` : Enable Doxygen documentation generation / Doxygen文書生成を有効化
+- `-DCMAKE_CXX_COMPILER=clang++` : Use Clang compiler / Clangコンパイラを使用
+- `-DCMAKE_CXX_COMPILER=g++` : Use GCC compiler / GCCコンパイラを使用
+- `-DCMAKE_CXX_STANDARD=17` : Use C++17 standard / C++17標準を使用
+- `-DCMAKE_CXX_STANDARD=20` : Use C++20 standard / C++20標準を使用
+- `-DCMAKE_CXX_STANDARD=23` : Use C++23 standard (default) / C++23標準を使用（デフォルト）
+
+Example with options / オプション付きの例：
+
+```bash
+# Debug build with documentation
+# デバッグビルドで文書生成を有効化
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DBUILD_DOC=ON
+cmake --build build -j --target run_tests
+```
+
+### Compiler and Standard Combinations / コンパイラと標準の組み合わせ
+
+```bash
+# Clang with C++23 (default)
+cmake -S . -B build-clang23 -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_STANDARD=23
+cmake --build build-clang23 -j --target run_tests
+
+# Clang with C++20
+cmake -S . -B build-clang20 -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_STANDARD=20
+cmake --build build-clang20 -j --target run_tests
+
+# Clang with C++17
+cmake -S . -B build-clang17 -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_STANDARD=17
+cmake --build build-clang17 -j --target run_tests
+
+# GCC with C++23
+cmake -S . -B build-gcc23 -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CXX_STANDARD=23
+cmake --build build-gcc23 -j --target run_tests
+
+# GCC with C++20
+cmake -S . -B build-gcc20 -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CXX_STANDARD=20
+cmake --build build-gcc20 -j --target run_tests
+
+# GCC with C++17
+cmake -S . -B build-gcc17 -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CXX_STANDARD=17
+cmake --build build-gcc17 -j --target run_tests
+```
+
+## Generate Documentation / ドキュメント生成
+
+To generate API documentation with Doxygen:
+
+Doxygen で API ドキュメントを生成するには：
+
+```bash
+# Configure with documentation enabled
+# ドキュメント生成を有効にして設定
+cmake -S . -B build -DBUILD_DOC=ON
+
+# Generate documentation
+# ドキュメントを生成
+cmake --build build --target doc
+```
+
+The generated documentation will be in the `docs` directory.
+
+生成されたドキュメントは `docs` ディレクトリに保存されます。
+
 # expand libraries into your code before submitting
 
 This library is installed only local directory so your source file can not be compiled

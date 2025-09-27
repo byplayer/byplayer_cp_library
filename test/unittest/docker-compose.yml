@@ -1,9 +1,8 @@
-version: "3.3"
 services:
   build:
-    image: "byplayer/cxx-build:test"
+    image: "byplayer/cxx-build:v202509.01"
     container_name: "builder"
     hostname: "builder"
     volumes:
       - "../../:/bcpl"
-    command: /bin/bash -c "cd /bcpl/test/unittest && ./test_all.sh"
+    command: /bin/bash -c "git config --global --add safe.directory '*' && cd /bcpl/test/unittest && ./test_all.sh"
