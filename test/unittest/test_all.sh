@@ -2,13 +2,16 @@
 
 set -eu
 
+# Get the project root directory (two levels up from current directory)
+PROJECT_ROOT="$(cd "$(pwd)/../.." && pwd)"
+
 # Fix Git ownership issue in Docker (ignore errors if not in git repo)
 git config --global --add safe.directory '*' 2>/dev/null || true
 
 # Check for cleanup option
 if [ "${1:-}" = "--clean" ]; then
     echo "Cleaning up build directories..."
-    cd /bcpl
+    cd "$PROJECT_ROOT/test/unittest"
     rm -rf build-*
     echo "Build directories removed."
     exit 0
@@ -25,14 +28,14 @@ function make_test() {
     TOTAL_TESTS=$((TOTAL_TESTS + 1))
     echo "Testing ${CXX} with C++${CXX_VER}"
 
-    # Navigate to project root for CMake
-    cd /bcpl
+    # Work in test/unittest directory
+    cd "$PROJECT_ROOT/test/unittest"
 
     # Determine number of parallel jobs
     PARALLEL_JOBS=$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
 
-    # Configure and build with CMake
-    if ! cmake -S . -B build-${CXX}-${CXX_VER} \
+    # Configure and build with CMake (source is project root, build dir is in test/unittest)
+    if ! cmake -S "$PROJECT_ROOT" -B "build-${CXX}-${CXX_VER}" \
           -DCMAKE_CXX_COMPILER=${CXX} \
           -DCMAKE_CXX_STANDARD=${CXX_VER} \
           -DCMAKE_BUILD_TYPE=Release ; then
@@ -42,7 +45,7 @@ function make_test() {
         return 1
     fi
 
-    if ! cmake --build build-${CXX}-${CXX_VER} -j${PARALLEL_JOBS} --target run_tests; then
+    if ! cmake --build "build-${CXX}-${CXX_VER}" -j${PARALLEL_JOBS} --target run_tests; then
         echo "ERROR: Build or tests failed for ${CXX} with C++${CXX_VER}"
         FAILED_TESTS="${FAILED_TESTS}\n  - ${CXX} with C++${CXX_VER}: Build or tests failed"
         FAILED_COUNT=$((FAILED_COUNT + 1))
@@ -53,8 +56,7 @@ function make_test() {
     echo "----------------------------------------"
 }
 
-# Test with various compiler and standard combinations
-# Continue even if individual tests fail
+# List of compilers and C++ standards to test
 make_test clang++ 23 || true
 make_test clang++ 20 || true
 make_test clang++ 17 || true

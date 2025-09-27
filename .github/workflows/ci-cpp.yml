@@ -5,8 +5,8 @@ on:
     branches: ["**"]
 jobs:
   cpp-ci:
-    runs-on:
-      container: byplayer/cxx-build:v202509.01
+    runs-on: ubuntu-latest
+    container: byplayer/cxx-build:v202509.01
     strategy:
       matrix:
         cxx: ["clang++", "g++"]
