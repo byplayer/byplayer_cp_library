@@ -122,12 +122,15 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND APPLE)
     # If using Homebrew LLVM, dynamically detect and add the library path
     if(CMAKE_CXX_COMPILER MATCHES "/opt/homebrew" OR CMAKE_CXX_COMPILER MATCHES "/usr/local")
         # Detect Homebrew LLVM path dynamically
-        execute_process(
-            COMMAND brew --prefix llvm
-            OUTPUT_VARIABLE BREW_LLVM_PREFIX
-            OUTPUT_STRIP_TRAILING_WHITESPACE
-            ERROR_QUIET
-        )
+        if(NOT DEFINED BREW_LLVM_PREFIX)
+            execute_process(
+                COMMAND brew --prefix llvm
+                OUTPUT_VARIABLE BREW_LLVM_PREFIX
+                OUTPUT_STRIP_TRAILING_WHITESPACE
+                ERROR_QUIET
+            )
+            set(BREW_LLVM_PREFIX "${BREW_LLVM_PREFIX}" CACHE STRING "Path to Homebrew LLVM")
+        endif()
         if(BREW_LLVM_PREFIX)
             target_link_directories(unittest PRIVATE ${BREW_LLVM_PREFIX}/lib/c++)
             message(STATUS "Using Homebrew LLVM from: ${BREW_LLVM_PREFIX}")
